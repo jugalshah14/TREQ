@@ -1,0 +1,91 @@
+@font-face {
+    font-family: Satoshi;
+    src: url(../font/Satoshi-Regular.ttf);
+}
+
+@font-face {
+    font-family: General Sans;
+    src: url(../font/GeneralSans-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.primary-text {
+    color: #7F8899;
+    font-family: General Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.main-text {
+    color: #1F2C35;
+    font-family: General Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+span {
+    color: #7F8899;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+label {
+    color: #7F8899;
+    font-size: 12px;
+}
+
+input {
+    width: 100%;
+    height: 35px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(127, 136, 153, 0.20);
+}
+
+a {
+    color: #E06A43;
+    text-decoration: none;
+}
+
+select {
+    width: 100%;
+    height: 35px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(127, 136, 153, 0.20);
+
+    option {
+        padding: 20px;
+    }
+
+}
+button{
+    cursor: pointer;
+        display: flex;
+        width: 160px;
+        padding: 10px 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 6px;
+        background: #E06A43;
+        color: white;
+        border: none;
+
+&.primary-button {
+    background: #E06A43;
+}
+}

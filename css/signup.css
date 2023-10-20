@@ -1,0 +1,136 @@
+.body-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh; }
+
+.logo {
+  margin-top: 40px;
+  margin-left: 40px;
+  width: max-content;
+  position: absolute; }
+
+.signUp-container {
+  display: flex;
+  width: 50vw;
+  justify-content: center; }
+  @media only screen and (max-width: 768px) {
+    .signUp-container {
+      width: 100%; } }
+
+.signUp-card {
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px; }
+  .signUp-card .signUp-google-container {
+    border-radius: 6px;
+    border: 1px solid #E5E7EB;
+    width: 100%; }
+  .signUp-card .signUp-google {
+    cursor: pointer;
+    display: flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; }
+  .signUp-card .or {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 8px; }
+    .signUp-card .or hr {
+      width: 100%;
+      background: #EFEFEF;
+      margin-left: 0;
+      margin-right: 0; }
+  .signUp-card .signUp-with {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px; }
+  .signUp-card .signUp-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch; }
+    .signUp-card .signUp-button-container .back-login {
+      color: #7F8899;
+      align-items: center;
+      display: flex;
+      text-decoration: none; }
+  .signUp-card .hr-line {
+    width: 100%; }
+    .signUp-card .hr-line hr {
+      background: #EFEFEF;
+      margin: 0; }
+  .signUp-card .login-container .first-text {
+    color: #7F8899; }
+
+.other-side {
+  display: flex;
+  width: 50vw;
+  background-color: #1E1E2D;
+  position: relative; }
+  @media only screen and (max-width: 769px) {
+    .other-side {
+      display: none; } }
+  .other-side .text-container {
+    width: 492px;
+    top: 160px;
+    position: absolute; }
+  .other-side .side-text {
+    left: 80px;
+    position: absolute;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: capitalize; }
+  .other-side .first-image {
+    position: absolute;
+    top: 78px;
+    left: 80px; }
+  .other-side .second-image {
+    position: absolute;
+    right: 0; }
+  @media only screen and (max-width: 1024px) {
+    .other-side .third-image {
+      display: none; } }
+  .other-side .third-image .back-image {
+    height: 700px;
+    bottom: 0;
+    right: 0;
+    position: absolute; }
+    @media only screen and (max-width: 1440px) {
+      .other-side .third-image .back-image {
+        height: 550px; } }
+  .other-side .third-image .upper-image1 {
+    position: absolute;
+    bottom: 335px;
+    right: 0; }
+    @media only screen and (max-width: 1440px) {
+      .other-side .third-image .upper-image1 {
+        bottom: 265px;
+        right: 0; } }
+    .other-side .third-image .upper-image1 img {
+      height: 155px; }
+      @media only screen and (max-width: 1440px) {
+        .other-side .third-image .upper-image1 img {
+          height: 120px; } }
+  .other-side .third-image .upper-image2 {
+    position: absolute;
+    bottom: 50px;
+    left: 150px; }
+    @media only screen and (max-width: 1440px) {
+      .other-side .third-image .upper-image2 {
+        bottom: 20px;
+        left: 55px; } }
+    .other-side .third-image .upper-image2 img {
+      height: 270px; }
+      @media only screen and (max-width: 1440px) {
+        .other-side .third-image .upper-image2 img {
+          height: 230px; } }

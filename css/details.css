@@ -1,0 +1,97 @@
+.body-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh; }
+
+.nav {
+  width: 50vw;
+  position: absolute;
+  display: flex;
+  justify-content: space-between; }
+  .nav .logo {
+    margin-top: 40px;
+    margin-left: 40px; }
+  .nav .details {
+    margin-top: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; }
+
+.signUp-container {
+  display: flex;
+  width: 50vw;
+  justify-content: center; }
+  @media only screen and (max-width: 768px) {
+    .signUp-container {
+      width: 100%; } }
+
+.signUp-card {
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px; }
+  .signUp-card .names {
+    align-self: stretch; }
+    .signUp-card .names .dropdown {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px; }
+  .signUp-card .mobile {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px; }
+  .signUp-card .signUp-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch; }
+    .signUp-card .signUp-button-container .back {
+      color: #1F2C35; }
+
+.other-side {
+  display: flex;
+  width: 50vw;
+  background-color: #F9F8FE;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  @media only screen and (max-width: 769px) {
+    .other-side {
+      display: none; } }
+  .other-side .main-card {
+    display: flex;
+    width: 450px;
+    height: 300px;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 14px -4px rgba(0, 0, 0, 0.05); }
+    .other-side .main-card .card-img {
+      height: 100px;
+      width: 100px; }
+    .other-side .main-card .card-text {
+      gap: 8px;
+      display: flex;
+      flex-direction: column; }
+      .other-side .main-card .card-text span {
+        color: #7F8899; }
+  .other-side .image {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .other-side .image-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0; }

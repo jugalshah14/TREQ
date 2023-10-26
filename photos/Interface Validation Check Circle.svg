@@ -1,0 +1,13 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Interface Validation Check Circle" clip-path="url(#clip0_2301_17309)">
+<g id="Group">
+<path id="Vector" d="M6.14062 11.2841L8.77566 13.3921C8.84643 13.4504 8.9293 13.4922 9.01824 13.5144C9.10717 13.5367 9.19995 13.5388 9.28982 13.5207C9.38054 13.5037 9.46654 13.4673 9.54195 13.4141C9.61737 13.3608 9.68043 13.292 9.72685 13.2122L13.8529 6.14258" stroke="#00A25B" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M9.99562 18.3526C14.61 18.3526 18.3506 14.6119 18.3506 9.99758C18.3506 5.38324 14.61 1.64258 9.99562 1.64258C5.38129 1.64258 1.64062 5.38324 1.64062 9.99758C1.64062 14.6119 5.38129 18.3526 9.99562 18.3526Z" stroke="#00A25B" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2301_17309">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>

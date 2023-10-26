@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Satoshi', sans-serif;
+    font-family: Satoshi
 }
 
 .primary-text {
@@ -75,7 +75,7 @@ select {
 button{
     cursor: pointer;
         display: flex;
-        width: 160px;
+        width:max-content;
         padding: 10px 16px;
         justify-content: center;
         align-items: center;
@@ -86,6 +86,7 @@ button{
         border: none;
 
 &.primary-button {
-    background: #E06A43;
+    background: #FDF8F6;
+    color: #E06A43;
 }
 }

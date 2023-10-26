@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Satoshi', sans-serif; }
+  font-family: Satoshi; }
 
 .primary-text {
   color: #7F8899;
@@ -63,7 +63,7 @@ select {
 button {
   cursor: pointer;
   display: flex;
-  width: 160px;
+  width: max-content;
   padding: 10px 16px;
   justify-content: center;
   align-items: center;
@@ -73,4 +73,5 @@ button {
   color: white;
   border: none; }
   button.primary-button {
-    background: #E06A43; }
+    background: #FDF8F6;
+    color: #E06A43; }

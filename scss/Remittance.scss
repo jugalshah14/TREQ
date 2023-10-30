@@ -73,7 +73,7 @@
         display: flex;
 
         .main-side-container {
-            width: 30%;
+            width: 20%;
             height: 875px;
             border-right: 2px solid #EFEFEF;
 
@@ -91,6 +91,49 @@
                 gap: 20px;
 
                 .card-1 {
+                    width: 90%;
+                    border-radius: 8px;
+                    border: 1px solid #EFEFEF;
+                    background: #FFF;
+
+                    .text {
+                        padding: 20px 30px;
+                        gap: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
+                    .main-text {
+                        font-family: Satoshi;
+                        font-weight: 700;
+                    }
+                }
+
+                .card-2 {
+                    width: 90%;
+                    border-radius: 8px;
+                    border: 1px solid #EFEFEF;
+                    background: #FFF;
+
+                    .text {
+                        padding: 20px 30px;
+                        gap: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
+                    .main-text {
+                        font-family: Satoshi;
+                        font-weight: 700;
+                    }
+
+                }
+
+                .card-3 {
                     width: 90%;
                     height: 110px;
                     border-radius: 8px;
@@ -121,73 +164,18 @@
                     .progress-fill {
                         position: absolute;
                         height: 4px;
-                        width: 33%;
+                        width: 50%;
                         background: linear-gradient(270deg, #E06A43 10.34%, #EFC5B8 102.72%);
                         border-radius: 15px;
                     }
-                }
-
-                .card-2 {
-                    width: 90%;
-                    padding: 20px 30px;
-                    border-radius: 8px;
-                    border: 1px solid #EFEFEF;
-                    background: #FFF;
-
-                }
-
-                .card-3 {
-                    width: 90%;
-                    padding: 20px 30px;
-                    border-radius: 8px;
-                    border: 1px solid #EFEFEF;
-                    background: #FFF;
                 }
             }
         }
 
         .second-container {
-            padding-top: 75px;
+            padding-top: 0px;
             padding-left: 75px;
-            width: 70%;
-
-            .card-1 {
-                display: flex;
-                border-radius: 8px;
-                border: 0px solid #EFEFEF;
-                background: #F2FAF7;
-                padding: 15px;
-                justify-content: space-between;
-                align-items: center;
-
-                .image-text {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 10px;
-
-                    .text {
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .main-text {
-                        font-family: Satoshi;
-                        font-weight: 500;
-                    }
-
-                    span {
-                        font-size: 12px;
-                    }
-                }
-
-                .message {
-                    span {
-                        color: #00A25B;
-                        font-size: 12px;
-                        font-weight: 500;
-                    }
-                }
-            }
+            width: 80%;
 
             .card-2 {
                 border-radius: 8px;
@@ -195,21 +183,35 @@
                 background: #fff;
                 margin-top: 30px;
 
-                .row-2 {
-                    margin-top: 20px;
-                }
-
-                .hr1 {
-                    margin-top: 50px;
-                }
-
-                .submit {
-                    justify-content: end;
-                    display: flex;
-                }
-
                 .padding {
                     padding: 15px;
+
+                    .hr {
+                        display: flex;
+                        gap: 15px;
+                        align-items: center;
+
+
+                        hr {
+                            width: 100%;
+                        }
+                    }
+
+                    .row {
+                        margin-top: 10px;
+
+                        .text-container {
+                            display: flex;
+                            gap: 10px;
+                        }
+                    }
+                    .button2{
+                        padding: 0;
+                        display: flex;
+                        justify-content: end;
+                        padding: 15px;
+                        
+                    }
                 }
 
                 .image-text {
@@ -252,6 +254,7 @@
                         flex-direction: row;
                         gap: 10px;
                         width: 100%;
+                        
 
                         .text {
                             display: flex;
@@ -275,32 +278,6 @@
                     display: flex;
                     flex-direction: row;
                     gap: 15px;
-                }
-            }
-
-            .card-bottom {
-                border-radius: 0px 0px 8px 8px;
-                background: #F9F8FE;
-                height: 40px;
-                padding: 10px 15px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 30px;
-
-                .img-text {
-                    gap: 10px;
-                    display: flex;
-                }
-
-                span {
-                    font-size: 12px;
-                    font-weight: 500;
-                }
-
-                hr {
-                    width: 1px;
-                    height: 100%;
                 }
             }
 

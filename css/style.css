@@ -29,6 +29,9 @@
   font-weight: 600;
   line-height: 24px; }
 
+p {
+  margin-bottom: 0; }
+
 span {
   color: #7F8899;
   font-size: 14px;
@@ -75,3 +78,39 @@ button {
   button.primary-button {
     background: #FDF8F6;
     color: #E06A43; }
+
+.modal .modal-header {
+  border: none;
+  align-items: center; }
+  .modal .modal-header .modal-title {
+    color: #1F2C35;
+    font-family: General Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; }
+  .modal .modal-header .close {
+    background: #F9F8FE;
+    border-radius: 25px;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px; }
+    .modal .modal-header .close span {
+      color: black; }
+
+.modal .modal-body span {
+  color: #1F2C35;
+  font-weight: 500; }
+
+.modal .modal-footer {
+  border: none;
+  justify-content: space-between; }
+  .modal .modal-footer button {
+    padding: 5px 10px; }
+  .modal .modal-footer a {
+    color: #1F2C35;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500; }

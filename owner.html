@@ -1,0 +1,153 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/owner.css" />
+    <title>owner</title>
+</head>
+
+<body>
+    <div class="full-body">
+        <div class="side-nav">
+            <div class="logo">
+                <img src="./photos/Group 100000353.svg" alt="" />
+            </div>
+            <div class="icon">
+                <img src="./photos/Compiling.png" alt="" />
+                <img src="./photos/Library.png" alt="" />
+                <img src="./photos/Box.png" alt="" />
+                <img src="./photos/Pictures.png" alt="" />
+                <img src="./photos/Frame146.png" alt="" />
+                <img src="./photos/Attachment.png" alt="" />
+                <img src="./photos/Layoutarranged.png" alt="" />
+                <img src="./photos/Layoutarranged.png" alt="" />
+                <img src="./photos/Layoutarranged.png" alt="" />
+            </div>
+            <div class="exit-icon">
+                <img src="./photos/arr011.svg" alt="" />
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="rectangle">
+                <div class="text">
+                    <span class="main-text">Welcome to TreQ</span>
+                    <span>Let’s finalise some information to start your trequer
+                        journey.</span>
+                </div>
+                <div>
+                    <img src="./photos/Mask.png" alt="" />
+                </div>
+            </div>
+            <div class="main-container">
+                <div class="main-side-container">
+                    <div class="top-name">
+                        <span class="primary-text">Getting Started</span>
+                        <img alt="" src="./photos/line.svg">
+                    </div>
+                    <div class="side-button">
+                        <div class="card-1">
+                            <div class="text">
+                                <p class="main-text">Business Profile Setup</p>
+                                <img alt="" src="./photos/tick.svg">
+                            </div>
+                        </div>
+                        <div class="card-2">
+                            <div class="text">
+                                <p class="main-text">Owner/Director KYC Setup</p>
+                                <p class="main-text">50% <span>Completed</span></p>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        <div class="card-3">
+                            <p class="main-text">Remittance Setup</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-container">
+                    <div class="card-2">
+                        <div class="padding">
+                            <div class="image-text">
+                                <img alt="" src="./photos/Frame2.svg">
+                                <div class="text">
+                                    <p class="main-text">Owner/Director PAN & Aadhaar</p>
+                                    <span>Please upload your proprietor PAN</span>
+                                </div>
+                            </div>
+                            <div class="pic-upload">
+                                <div class="image-text1">
+                                    <img alt="" src="./photos/Frame3.svg">
+                                    <div class="text">
+                                        <p class="main-text">Upload your Business PAN</p>
+                                        <span>in PDF/JPG/PNG, Max Allowable Size 200KB.</span>
+                                    </div>
+                                </div>
+                                <div class="button">
+                                    <button class="primary-button">Click a Pic</button>
+                                    <button>Upload</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>PAN Number*</label>
+                                    <input type="text" placeholder="ABCD1234F">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Name on PAN*</label>
+                                    <input type="text" placeholder="Apollo Tyres Pvt Ltd">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Date of Birth</label>
+                                    <input type="date" placeholder="L01631KA2010PTC096843">
+                                </div>
+                            </div>
+                            <div class="row row-main">
+                                <div class="col-md-9">
+                                    <label>Owner's Aadhar Number</label>
+                                    <div class="row-1">
+                                        <input type="text" maxlength="4" placeholder="-">
+                                        <input type="text" maxlength="4" placeholder="-">
+                                        <input type="text" maxlength="4" placeholder="-">
+                                        <button onclick="window.location.href='Remittance.html'">Verify</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-bottom">
+                            <div class="img-text">
+                                <img alt="" src="./photos/Lock 1.svg">
+                                <span>Your data is secure and protected</span>
+                            </div>
+                            <hr class="hr2" color="#E5E7EB" />
+                            <div class="img-text">
+                                <img alt="" src="./photos/Interface Validation Check Circle.svg">
+                                <span>KYC compliant with RBI regulations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+    const inputs = document.querySelectorAll('input[type="text"]');
+
+    inputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+            input.value = input.value.replace(/\D/g, '');
+
+            if (input.value.length === 4) {
+                if (index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            }
+        });
+    });
+</script>
+
+</html>

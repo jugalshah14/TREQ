@@ -7,16 +7,16 @@
     background-color: #1E1E2D;
     width: 100px;
     height: 100vh;
+    @media only screen and (max-width: 768px) {
+            display: none;
+        }
 
     .logo {
         height: 70px;
         border-bottom: 1px solid #2D2D43;
-
-        img {
-            position: relative;
-            top: 25px;
-            left: 18px;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .icon {
@@ -49,7 +49,12 @@
 
 .main-content {
     width: 100%;
-    padding: 0 100px;
+    padding: 0 20px;
+
+    @media only screen and (max-width: 768px) {
+            width: 100%;
+            padding: 0 20px;
+        }
 
     .rectangle {
         height: 115px;
@@ -57,6 +62,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media only screen and (max-width: 768px) {
+                width: 100%;
+
+                img{
+                    display: none;
+                }
+            }
 
         .text {
             display: flex;
@@ -66,16 +79,30 @@
 
         .main-text {
             font-size: 25px;
+            @media only screen and (max-width: 768px) {
+                    font-size: 15px;
+                }
         }
     }
 
     .main-container {
         display: flex;
 
+        @media only screen and (max-width: 768px) {
+                width: 100%;
+                display: block;
+            }
+
         .main-side-container {
             width: 30%;
             height: 875px;
             border-right: 2px solid #EFEFEF;
+
+            @media only screen and (max-width: 768px) {
+                    width: 100%;
+                    border-right: none;
+                    height: auto;
+                }
 
             .top-name {
                 display: flex;
@@ -90,12 +117,15 @@
                 flex-direction: column;
                 gap: 20px;
 
-                .card-1 {
+                .cards-1 {
                     width: 90%;
                     height: 110px;
                     border-radius: 8px;
                     border: 1px solid #E06A43;
                     background: #FFF;
+                    @media only screen and (max-width: 768px) {
+                            width: 100%;
+                        }
 
                     .text {
                         padding: 20px 30px;
@@ -127,21 +157,27 @@
                     }
                 }
 
-                .card-2 {
+                .cards-2 {
                     width: 90%;
                     padding: 20px 30px;
                     border-radius: 8px;
                     border: 1px solid #EFEFEF;
                     background: #FFF;
+                    @media only screen and (max-width: 768px) {
+                            width: 100%;
+                        }
 
                 }
 
-                .card-3 {
+                .cards-3 {
                     width: 90%;
                     padding: 20px 30px;
                     border-radius: 8px;
                     border: 1px solid #EFEFEF;
                     background: #FFF;
+                    @media only screen and (max-width: 768px) {
+                            width: 100%;
+                        }
                 }
             }
         }
@@ -150,6 +186,11 @@
             padding-top: 75px;
             padding-left: 75px;
             width: 70%;
+            @media only screen and (max-width: 768px) {
+                    width: 100%;
+                    padding-top: 50px;
+                    padding-left: 0;
+                }
 
             .card-1 {
                 display: flex;
@@ -195,6 +236,33 @@
                 background: #fff;
                 margin-top: 30px;
 
+                .card-body{
+                    padding: 0 15px 15px 15px;
+                }
+
+                .card-down-body{
+                    display: none;
+                }
+
+                .loading {
+                        border: 5px solid #f3f3f3;
+                        border-top: 5px solid #E06A43;
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        animation: spin 2s linear infinite;
+                    }
+                
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
                 .row-2 {
                     margin-top: 20px;
                 }
@@ -210,6 +278,9 @@
 
                 .padding {
                     padding: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
                 }
 
                 .image-text {
@@ -247,6 +318,10 @@
                     border: 1px dashed rgba(127, 136, 153, 0.50);
                     justify-content: space-between;
 
+                    @media only screen and (max-width: 768px) {
+                            display: block;
+                        }
+
                     .image-text1 {
                         display: flex;
                         flex-direction: row;
@@ -275,6 +350,10 @@
                     display: flex;
                     flex-direction: row;
                     gap: 15px;
+
+                    @media only screen and (max-width: 768px) {
+                            margin-top:20px;
+                        }
                 }
             }
 
@@ -312,8 +391,19 @@
                 margin-bottom: 30px;
 
                 .row-2 {
+                    display: none;
                     margin-top: 50px;
                     margin-left: 35px;
+
+                    @media only screen and (max-width: 768px) {
+                            width: 100%;
+
+                            .col-md-5{
+                                max-width: 100%;
+                                flex: 100%;
+                                margin-right: 20px;
+                            }
+                        }
 
                     .hr {
                         display: flex !important;
@@ -365,12 +455,12 @@
                     display: flex;
                 }
 
-                .image-text {
+                .image-text3 {
                     display: flex;
                     flex-direction: row;
                     gap: 10px;
 
-                    .image {
+                    .image1 {
                         background: #F6F8FE;
                         display: flex;
                         height: 40px;
@@ -396,7 +486,7 @@
                     }
                 }
 
-                .image {
+                .image2 {
                     background: #FEF6F6;
                     display: flex;
                     height: 40px;

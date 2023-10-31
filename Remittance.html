@@ -83,88 +83,132 @@
                                     <span>Please add your settlement account to proceed.</span>
                                 </div>
                             </div>
-                            <div class="pic-upload">
-                                <div class="image-text1">
-                                    <img alt="" src="./photos/Frame3.svg">
-                                    <div class="text">
-                                        <p class="main-text">Upload Your Cheque</p>
-                                        <span>in PDF/JPG/PNG, Max Allowable Size 200KB.</span>
+                            <div class="completed-text" style="display: none;">Completed !</div>
+                            </div>
+                            <div class="main-card-body">
+                                <div class="pic-upload">
+                                    <div class="image-text1">
+                                        <img alt="" src="./photos/Frame3.svg">
+                                        <div class="text">
+                                            <p class="main-text" id="file-name-text">Upload Your Cheque</p>
+                                            <span>in PDF/JPG/PNG, Max Allowable Size 200KB.</span>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button class="primary-button">Click a Pic</button>
+                                        <button id="file-upload-button">Upload</button>
+                                        <input type="file" id="file-input" accept=".pdf, .jpg, .png"
+                                            style="display: none">
                                     </div>
                                 </div>
-                                <div class="button">
-                                    <button class="primary-button">Click a Pic</button>
-                                    <button>Upload</button>
+                                <div class="loading" style="display: none"></div>
+                                <div class="hr">
+                                    <hr>or
+                                    <hr>
                                 </div>
-                            </div>
-                            <div class="hr">
-                                <hr>or
-                                <hr>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Account Holder Name*</label>
-                                    <input type="text" placeholder="Enter Account Holder Name">
+                                <div class="detail-button">
+                                    <button class="my-button">Enter Account Details Manually</button>
                                 </div>
-                                <div class="col-md-6">
-                                    <label>Bank Name*</label>
-                                    <input type="text" placeholder="Enter Bank Name">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Account Number*</label>
-                                    <input type="number" placeholder="Enter Account Number">
-                                </div>
-                                <div class="col-md-6">
-                                    <label>IFSC Code*</label>
-                                    <input type="text" placeholder="Enter IFSC Code">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="text-container">
-                                        <img alt="" src="./photos/Group 1000003685.svg">
-                                        <span>We'll credit ₹1.00 in your account to verify</span>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Account Holder Name*</label>
+                                            <input type="text" placeholder="Enter Account Holder Name">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Bank Name*</label>
+                                            <input type="text" placeholder="Enter Bank Name">
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <hr class="mt-4">
-                            <div class="row">
-                                <div class="col-md-12 button2">
-                                    <button>Verify & Submit</button>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Account Number*</label>
+                                            <input type="number" placeholder="Enter Account Number">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>IFSC Code*</label>
+                                            <input type="text" placeholder="Enter IFSC Code">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="text-container">
+                                                <img alt="" src="./photos/Group 1000003685.svg">
+                                                <span>We'll credit ₹1.00 in your account to verify</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="mt-4">
+                                    <div class="row">
+                                        <div class="col-md-12 button2">
+                                            <button class="submit">Verify & Submit</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-3">
+                    <div class="cards-3">
                         <div class="card-main">
-                            <div class="image-text">
+                            <div class="image-text1">
                                 <div class="image">
                                     <img alt="" src="./photos/Frame2.svg">
                                 </div>
                                 <div class="text">
-                                    <p class="main-text">Trade ID Setup</p>
-                                    <span>It is required to initiate any trade</span>
+                                    <p class="main-text">Multi-currency Account Setup</p>
+                                    <span>Multi-currency accounts help you receive collections from your customers in
+                                        their local currencies</span>
+                                </div>
+                            </div>
+                            <div class="lock-image">
+                                <img alt="" src="./photos/Interface Lock.svg">
+                            </div>
+                        </div>
+                        <div class="main-card-body2">
+                        <div class="row drop-down1">
+                            <div class="col-md-4">
+                                <label>Select Global Currency*</label>
+                                <select name="global_currency" id="global_currency">
+                                    <option value="select" selected>Select Currency</option>
+                                    <option value="usd">USD - US Dollar ($)</option>
+                                    <option value="eur">EUR - Euro (€)</option>
+                                    <option value="gbp">GBP - British Pound (£)</option>
+                                    <option value="inr">INR - Indian Rupee (₨)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bottom-button">
+                            <a href="#">Skip For Now</a>
+                            <button>submit</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card-4">
+                        <div class="card-main">
+                            <div class="image-text2">
+                                <div class="image">
+                                    <img alt="" src="./photos/Frame2.svg">
+                                </div>
+                                <div class="text">
+                                    <p class="main-text">Purpose Code Setup</p>
+                                    <span>A purpose code is issued by a central bank for cross-border transactions'
+                                        success.</span>
                                 </div>
                             </div>
                             <div class="image">
                                 <img alt="" src="./photos/Interface Lock.svg">
                             </div>
                         </div>
-                    </div>
-                    <div class="card-3">
-                        <div class="card-main">
-                            <div class="image-text">
-                                <div class="image">
-                                    <img alt="" src="./photos/Frame2.svg">
-                                </div>
-                                <div class="text">
-                                    <p class="main-text">Trade ID Setup</p>
-                                    <span>It is required to initiate any trade</span>
-                                </div>
-                            </div>
-                            <div class="image">
-                                <img alt="" src="./photos/Interface Lock.svg">
+                        <div class="row drop-down2">
+                            <div class="col-md-5">
+                                <label>Purpose Code</label>
+                                <select name="Purpose Code" id="Purpose Code">
+                                    <option value="select" selected>Select Purpose Code</option>
+                                    <option value="usd">USD - US Dollar ($)</option>
+                                    <option value="eur">EUR - Euro (€)</option>
+                                    <option value="gbp">GBP - British Pound (£)</option>
+                                    <option value="inr">INR - Indian Rupee (₨)</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -173,5 +217,85 @@
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#file-upload-button").click(function () {
+            $("#file-input").click();
+        });
+
+        $(".my-button").click(function () {
+            $(".card-body").show();
+            $(this).hide();
+        });
+
+        $("#file-input").change(function () {
+            const fileInput = this;
+            if (fileInput.files.length > 0) {
+                $(".loading").show();
+
+                const selectedFile = fileInput.files[0];
+                const maxSizeKB = 200;
+
+                if (selectedFile.size <= maxSizeKB * 1024) {
+                    const allowedTypes = [".pdf", ".jpg", ".png"];
+                    const fileType = "." + selectedFile.name.split(".").pop().toLowerCase();
+
+                    if (allowedTypes.includes(fileType)) {
+                        setTimeout(function () {
+                            $("#file-name-text").text(selectedFile.name);
+
+                            $(".loading").hide();
+                            $(".card-body").show();
+                            $(".my-button").hide();
+                        }, 2000);
+                    } else {
+                        alert("Only PDF, JPG, or PNG files are allowed.");
+                        fileInput.value = "";
+
+                        $(".loading").hide();
+                    }
+                } else {
+                    alert("File size exceeds the maximum allowable size (200KB).");
+                    fileInput.value = "";
+
+                    $(".loading").hide();
+                }
+            }
+        });
+        $(".submit").click(function () {
+            // Check if all input fields are filled
+            var allFieldsFilled = true;
+            $("input[type='text'], input[type='number']").each(function () {
+                if ($(this).val() === "") {
+                    allFieldsFilled = false;
+                    return false; 
+                }
+            });
+
+            if (allFieldsFilled) {
+                $(".main-card-body").hide();
+                $(".padding").css("background-color", '#F2FAF7');
+                $('.image-text img').attr('src', './photos/tick.svg');
+                $('.image-text img').css('border-radius', '0');
+                $('.image-text img').css('padding', '0');
+                $('.image-text img').css('background-color', 'transparent');
+
+                $('.completed-text').css({
+                    'display': 'block',
+                    'color': '#00A25B',
+                    'font-size': '12px'
+                });
+
+                $(".cards-3 .main-card-body2").show();
+                $(".cards-3 .main-text").css('color','black');
+                
+                $(".cards-3 .lock-image").remove();
+            } else {
+                alert("Please fill in all required fields.");
+            }
+        });
+    });
+</script>
 
 </html>

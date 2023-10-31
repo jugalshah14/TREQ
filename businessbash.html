@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -49,7 +49,7 @@
                         <img alt="" src="./photos/line.svg">
                     </div>
                     <div class="side-button">
-                        <div class="card-1">
+                        <div class="cards-1">
                             <div class="text">
                                 <p class="main-text">Business Profile Setup</p>
                                 <p class="main-text">33% <span>Completed</span></p>
@@ -58,10 +58,10 @@
                                 <div class="progress-fill"></div>
                             </div>
                         </div>
-                        <div class="card-2">
+                        <div class="cards-2">
                             <p class="main-text">Owner/Director KYC Setup</p>
                         </div>
-                        <div class="card-3">
+                        <div class="cards-3">
                             <p class="main-text">Remittance Setup</p>
                         </div>
                     </div>
@@ -88,31 +88,37 @@
                                     <span>PAN and Address details to verify</span>
                                 </div>
                             </div>
+                            <div class="completed-text" style="display: none;">Completed !</div>
+                            </div>
+                            <div class="card-body">
                             <div class="pic-upload">
                                 <div class="image-text1">
                                     <img alt="" src="./photos/Frame3.svg">
                                     <div class="text">
-                                        <p class="main-text">Upload your Business PAN</p>
+                                        <p class="main-text" id="file-name-text">Upload your Business PAN</p>
                                         <span>in PDF/JPG/PNG, Max Allowable Size 200KB.</span>
                                     </div>
                                 </div>
                                 <div class="button">
                                     <button class="primary-button">Click a Pic</button>
-                                    <button>Upload</button>
+                                    <button id="file-upload-button">Upload</button>
+                                    <input type="file" id="file-input" accept=".pdf, .jpg, .png" style="display: none">
                                 </div>
                             </div>
+                            <div class="loading" style="display: none"></div>
+                            <div class="card-down-body">
                             <div class="row">
                                 <div class="col-md-4">
                                     <label>PAN Number*</label>
-                                    <input type="text" placeholder="ABCD1234F">
+                                    <input type="text" placeholder="ABCD1234F" disabled>
                                 </div>
                                 <div class="col-md-4">
                                     <label>Business Name as per PAN</label>
-                                    <input type="text" placeholder="Apollo Tyres Pvt Ltd">
+                                    <input type="text" placeholder="Apollo Tyres Pvt Ltd" disabled>
                                 </div>
                                 <div class="col-md-4">
                                     <label>CIN Number*</label>
-                                    <input type="text" placeholder="L01631KA2010PTC096843">
+                                    <input type="text" placeholder="L01631KA2010PTC096843" disabled>
                                 </div>
                             </div>
                             <div class="row row-2">
@@ -122,7 +128,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <label>GSTIN</label>
-                                    <input type="number" placeholder="3343423">
+                                    <input type="number" placeholder="3343423" disabled>
                                 </div>
                                 <div class="col-md-5">
                                     <label>Billing Address*</label>
@@ -131,8 +137,8 @@
                             </div>
                             <hr class="hr1">
                             <div class="submit"><button>Submit</button></div>
-
-                        </div>
+                            </div>
+                            </div>
                         <div class="card-bottom">
                             <div class="img-text">
                                 <img alt="" src="./photos/Lock 1.svg">
@@ -147,8 +153,8 @@
                     </div>
                     <div class="card-3">
                         <div class="card-main">
-                            <div class="image-text">
-                                <div class="image">
+                            <div class="image-text3">
+                                <div class="image1">
                                     <img alt="" src="./photos/Frame2.svg">
                                 </div>
                                 <div class="text">
@@ -156,7 +162,7 @@
                                     <span>It is required to initiate any trade</span>
                                 </div>
                             </div>
-                            <div class="image">
+                            <div class="image2">
                                 <img alt="" src="./photos/Interface Lock.svg">
                             </div>
                         </div>
@@ -165,25 +171,29 @@
                             <div class="col-md-5">
                                 <label>Your IEC Number</label>
                                 <div class="input-container">
-                                <input type="text" placeholder="ABCDE1234F"><button onclick="window.location.href = 'owner.html';">Verify</button>
-                                </div>                              
+                                    <input type="text" placeholder="ABCDE1234F"><button
+                                        onclick="window.location.href = 'owner.html';">Verify</button>
+                                </div>
                                 <div class="hr">
                                     <hr>or
                                     <hr>
                                 </div>
-                                <button class="persnol-button" data-toggle="modal" data-target="#myModal">Apply for IEC</button>
-                                
+                                <button class="persnol-button" data-toggle="modal" data-target="#myModal">Apply for
+                                    IEC</button>
+
                                 <div class="modal" id="IECModal" tabindex="-1">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Sure about applying for IEC ?</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">X</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <span>Once submit our growth manager will be in contact with you to continue the steps and guide you through process.</span>
+                                                <span>Once submit our growth manager will be in contact with you to
+                                                    continue the steps and guide you through process.</span>
                                             </div>
                                             <div class="modal-footer">
                                                 <a href="#" data-dismiss="modal">Skip for now</a>
@@ -209,8 +219,80 @@
     crossorigin="anonymous"></script>
 <script>
     $(".persnol-button").click(function () {
-            $('#IECModal').modal('show');
+        $('#IECModal').modal('show');
+    });
+
+  $('.submit button').click(function (e) {
+        var imageFields = $('input[type="file"]');
+        var emptyImageFields = imageFields.filter(function () { return !$(this).val(); });
+
+        if (emptyImageFields.length > 0) {
+            e.preventDefault(); 
+            alert('Please fill out all image fields.');
+        } else {
+            $('.card-2 > :not(.padding)').hide();
+            $('.padding').show();
+
+            $('.padding').css('background-color', '#F2FAF7');
+
+            $('.image-text img').attr('src', './photos/tick.svg');
+            $('.image-text img').css('border-radius', '0');
+            $('.image-text img').css('padding', '0');
+            $('.image-text img').css('background-color', 'transparent');
+
+             $('.completed-text').css({
+                'display': 'block',
+                'color': '#00A25B',
+                'font-size': '12px'
+            });
+            $('.card-3 .row-2').show();
+            $('.card-3 .image2').remove();
+
+        }
+    });
+
+
+
+    $(document).ready(function () {
+        $("#file-upload-button").click(function () {
+            $("#file-input").click();
         });
+
+        $("#file-input").change(function () {
+            const fileInput = this;
+            if (fileInput.files.length > 0) {
+                $(".loading").show();
+
+                const selectedFile = fileInput.files[0];
+                const maxSizeKB = 200;
+
+                if (selectedFile.size <= maxSizeKB * 1024) {
+                    // Check the file type
+                    const allowedTypes = [".pdf", ".jpg", ".png"];
+                    const fileType = "." + selectedFile.name.split(".").pop().toLowerCase();
+
+                    if (allowedTypes.includes(fileType)) {
+                        setTimeout(function () {
+                            $("#file-name-text").text(selectedFile.name);
+
+                            $(".loading").hide();
+                            $(".card-down-body").show();
+                        }, 2000);
+                    } else {
+                        alert("Only PDF, JPG, or PNG files are allowed.");
+                        fileInput.value = "";
+
+                        $(".loading").hide();
+                    }
+                } else {
+                    alert("File size exceeds the maximum allowable size (200KB).");
+                    fileInput.value = "";
+
+                    $(".loading").hide();
+                }
+            }
+        });
+    });
 </script>
 
 </html>

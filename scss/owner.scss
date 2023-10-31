@@ -8,15 +8,16 @@
     width: 100px;
     height: 100vh;
 
+    @media only screen and (max-width: 768px) {
+            display: none;
+        }
+
     .logo {
         height: 70px;
         border-bottom: 1px solid #2D2D43;
-
-        img {
-            position: relative;
-            top: 25px;
-            left: 18px;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .icon {
@@ -49,7 +50,7 @@
 
 .main-content {
     width: 100%;
-    padding: 0 100px;
+    padding: 0 20px;
 
     .rectangle {
         height: 115px;
@@ -67,15 +68,37 @@
         .main-text {
             font-size: 25px;
         }
+
+                 @media only screen and (max-width: 768px) {
+                     width: 100%;
+
+                     img{
+                        display: none;
+                     }
+
+                     .main-text{
+                        font-size: 15px;
+                     }
+                 }
     }
 
     .main-container {
         display: flex;
 
+        @media only screen and (max-width: 768px) {
+                display: block;
+            }
+
         .main-side-container {
             width: 20%;
             height: 875px;
             border-right: 2px solid #EFEFEF;
+
+            @media only screen and (max-width: 768px) {
+                    width: 100%;
+                    height: auto;
+                    border-right: none;
+                }
 
             .top-name {
                 display: flex;
@@ -95,6 +118,9 @@
                     border-radius: 8px;
                     border: 1px solid #EFEFEF;
                     background: #FFF;
+                    @media only screen and (max-width: 768px) {
+                            width: 100%;
+                        }
 
                     .text {
                         padding: 20px 30px;
@@ -117,6 +143,9 @@
                     border-radius: 8px;
                     border: 1px solid #E06A43;
                     background: #FFF;
+                    @media only screen and (max-width: 768px) {
+                            width: 100%;
+                        }
 
                     .text {
                         padding: 20px 30px;
@@ -155,6 +184,9 @@
                     border-radius: 8px;
                     border: 1px solid #EFEFEF;
                     background: #FFF;
+                    @media only screen and (max-width: 768px) {
+                            width: 100%;
+                        }
                 }
             }
         }
@@ -163,6 +195,12 @@
             padding-top: 0px;
             padding-left: 75px;
             width: 80%;
+            @media only screen and (max-width: 768px) {
+                    width: 100%;
+                    padding-left: 0;
+                    padding-top: 50px;
+                    margin-bottom: 50px;
+                }
 
             .card-2 {
                 border-radius: 8px;
@@ -170,6 +208,28 @@
                 background: #fff;
                 margin-top: 30px;
 
+                .loading {
+                        border: 5px solid #f3f3f3;
+                        border-top: 5px solid #E06A43;
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        animation: spin 2s linear infinite;
+                    }
+                
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                    .card-body{
+                        padding: 0;
+                        display: none;
+                    }
                 .padding {
                     padding: 15px;
 
@@ -186,12 +246,19 @@
                             height: 40px;
                             width: 80px;
                             text-align: center;
+                            @media only screen and (max-width: 768px) {
+                                    width: 50%;
+                                }
                         }
 
                         button {
                             padding: 0;
                             width: 70px;
                             margin-left: 20px;
+
+                            @media only screen and (max-width: 768px) {
+                                    padding: 10px 16px;
+                                }
                         }
                     }
                 }
@@ -231,6 +298,10 @@
                     border: 1px dashed rgba(127, 136, 153, 0.50);
                     justify-content: space-between;
 
+                    @media only screen and (max-width: 768px) {
+                            display: block;
+                        }
+
                     .image-text1 {
                         display: flex;
                         flex-direction: row;
@@ -259,6 +330,9 @@
                     display: flex;
                     flex-direction: row;
                     gap: 15px;
+                    @media only screen and (max-width: 768px) {
+                            margin-top: 20px;
+                        }
                 }
             }
 

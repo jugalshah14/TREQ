@@ -106,16 +106,16 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label>Date of Birth</label>
-                                        <input type="date">
+                                        <input type="date" id="dob-input">
                                     </div>
                                 </div>
                                 <div class="row row-main">
                                     <div class="col-md-9">
                                         <label>Owner's Aadhar Number</label>
                                         <div class="row-1">
-                                            <input type="text" maxlength="4" placeholder="-">
-                                            <input type="text" maxlength="4" placeholder="-">
-                                            <input type="text" maxlength="4" placeholder="-">
+                                        <input type="text" id="aadhar1" class="aadhar" maxlength="4" placeholder="-">
+                                        <input type="text" id="aadhar2" class="aadhar" maxlength="4" placeholder="-">
+                                        <input type="text" id="aadhar3" class="aadhar" maxlength="4" placeholder="-">
                                             <button id="verify-button">Verify</button>
                                         </div>
                                     </div>
@@ -193,6 +193,8 @@
                 }
             }
         });
+        
+        
         $("#verify-button").click(function () {
             if (validateFields()) {
                 window.location.href = 'Remittance.html';
@@ -202,14 +204,12 @@
         });
 
         function validateFields() {
-            const imageInput = document.querySelector('#file-input');
-            const dobInput = document.querySelector('input[type="date"]');
+            const dobInput = document.getElementById('dob-input');
+            const aadhar1 = document.getElementById('aadhar1');
+            const aadhar2 = document.getElementById('aadhar2');
+            const aadhar3 = document.getElementById('aadhar3');
 
-            if (!imageInput.files[0]) {
-                return false;
-            }
-
-            if (!dobInput.value) {
+            if ( !dobInput.value || !aadhar1.value || !aadhar2.value || !aadhar3.value) {
                 return false;
             }
 

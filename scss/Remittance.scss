@@ -462,13 +462,28 @@
                 margin-top: 30px;
                 margin-bottom: 30px;
 
-                .drop-down2 {
+                .main-card-body3{
                     display: none;
+
+                    .bottom-button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: end;
+                        }
+                }
+
+                .drop-down2 {
                     margin-top: 30px;
                     margin-left: 40px;
 
                     select {
                         height: auto;
+
+                        option{
+                            width: 100%;
+                            padding: 30px;
+                            border-bottom: 1px solid #2D2D43;
+                        }
                     }
                 }
 
@@ -511,7 +526,7 @@
                 }
             }
 
-            .image {
+            .lock-image {
                 background: #FEF6F6;
                 display: flex;
                 height: 40px;

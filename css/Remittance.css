@@ -318,12 +318,21 @@
         padding: 15px;
         margin-top: 30px;
         margin-bottom: 30px; }
+        .main-content .main-container .second-container .card-4 .main-card-body3 {
+          display: none; }
+          .main-content .main-container .second-container .card-4 .main-card-body3 .bottom-button {
+            display: flex;
+            align-items: center;
+            justify-content: end; }
         .main-content .main-container .second-container .card-4 .drop-down2 {
-          display: none;
           margin-top: 30px;
           margin-left: 40px; }
           .main-content .main-container .second-container .card-4 .drop-down2 select {
             height: auto; }
+            .main-content .main-container .second-container .card-4 .drop-down2 select option {
+              width: 100%;
+              padding: 30px;
+              border-bottom: 1px solid #2D2D43; }
       .main-content .main-container .second-container .card-main {
         justify-content: space-between;
         align-items: center;
@@ -349,7 +358,7 @@
           font-weight: 500; }
         .main-content .main-container .second-container .image-text2 span {
           font-size: 12px; }
-      .main-content .main-container .second-container .image {
+      .main-content .main-container .second-container .lock-image {
         background: #FEF6F6;
         display: flex;
         height: 40px;

@@ -110,29 +110,29 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <label>PAN Number*</label>
-                                    <input type="text" placeholder="ABCD1234F" disabled>
+                                    <input type="text" placeholder="Enter Pan Number" value="ASD2233D" disabled>
                                 </div>
                                 <div class="col-md-4">
                                     <label>Business Name as per PAN</label>
-                                    <input type="text" placeholder="Apollo Tyres Pvt Ltd" disabled>
+                                    <input type="text" placeholder="Enter Business Name as per PAN" value="Apollo Tyres Pvt Ltd" disabled>
                                 </div>
                                 <div class="col-md-4">
                                     <label>CIN Number*</label>
-                                    <input type="text" placeholder="L01631KA2010PTC096843" disabled>
+                                    <input type="text" placeholder="Enter CIN Number" value="L01631KA2010PTC096843" disabled>
                                 </div>
                             </div>
                             <div class="row row-2">
                                 <div class="col-md-2">
                                     <label>Date of Incorporation</label>
-                                    <input type="date" placeholder="01 Jan 2000">
+                                    <input type="date" placeholder="01 Jan 2000" class="dob">
                                 </div>
                                 <div class="col-md-5">
                                     <label>GSTIN</label>
-                                    <input type="number" placeholder="3343423" disabled>
+                                    <input type="number" placeholder="Enter GSTIN" value="3343423" disabled>
                                 </div>
                                 <div class="col-md-5">
                                     <label>Billing Address*</label>
-                                    <input type="text">
+                                    <input type="text" class="Address">
                                 </div>
                             </div>
                             <hr class="hr1">
@@ -222,13 +222,16 @@
         $('#IECModal').modal('show');
     });
 
-  $('.submit button').click(function (e) {
-        var imageFields = $('input[type="file"]');
-        var emptyImageFields = imageFields.filter(function () { return !$(this).val(); });
+    $('.submit button').click(function (e) {
+        var dobField = $('.dob');
+        var addressField = $('.Address');
 
-        if (emptyImageFields.length > 0) {
-            e.preventDefault(); 
-            alert('Please fill out all image fields.');
+        var isEmptyDob = !dobField.val();
+        var isEmptyAddress = !addressField.val();
+
+        if (isEmptyDob || isEmptyAddress) {
+            e.preventDefault();
+            alert('Please fill out all Fields.');
         } else {
             $('.card-2 > :not(.padding)').hide();
             $('.padding').show();

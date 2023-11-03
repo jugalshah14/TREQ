@@ -12,9 +12,10 @@
 <body>
     <div class="nav">
         <div class="logo">
-        <img alt="" src="./photos/Group 1000003533.svg" /></div>
+            <img alt="" src="./photos/Group 1000003533.svg" />
+        </div>
         <div class="details">
-            <span class="first-line">aditvaidya@gmail.com</span>
+            <span class="first-line" id="EmailText"></span>
             <a href="./login.html">Sign Out</a>
         </div>
     </div>
@@ -27,23 +28,24 @@
                 </div>
                 <div class="names">
                     <div class="name">
-                    <label>First Name</label>
-                    <input type="text" placeholder="Enter First Name">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" placeholder="Enter First Name">
+                        <span id="errorMessage1" style="color: #E06A43;"></span>
                     </div>
                     <div class="name">
                         <label>Last Name</label>
-                        <input type="text" placeholder="Enter Last Name">
+                        <input type="text" id="lastName" placeholder="Enter Last Name">
+                        <span id="errorMessage2" style="color: #E06A43;"></span>
                     </div>
                 </div>
                 <div class="mobile">
                     <label>Mobile</label>
-                    <input type="text" placeholder="Enter Mobile">
+                    <input type="text" id="mobile" placeholder="Enter Mobile">
+                    <span id="errorMessage3" style="color: #E06A43;"></span>
                 </div>
-
-               
                 <div class="signUp-button-container">
-                    <button class="primary-button" onclick="window.location.href = 'details.html';">Proceed</button>
-                </div>  
+                    <button id="proceedButton">Proceed</button>
+                </div>
             </div>
         </div>
         <div class="other-side">
@@ -65,7 +67,43 @@
     </div>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var savedEmail = localStorage.getItem('email');
+
+        if (savedEmail) {
+            var EmailText = $('#EmailText');
+            EmailText.html(savedEmail);
+        }
+        $('#proceedButton').on('click', function () {
+            var firstName = $('#firstName').val();
+            var lastName = $('#lastName').val();
+            var mobile = $('#mobile').val();
+
+            $('#errorMessage1').text('');
+            $('#errorMessage2').text('');
+            $('#errorMessage3').text('');
+
+            if (firstName.trim() === '') {
+                $('#errorMessage1').text('First Name is required');
+            }
+
+            if (lastName.trim() === '') {
+                $('#errorMessage2').text('Last Name is required');
+            }
+
+            if (mobile.trim() === '') {
+                $('#errorMessage3').text('Mobile is required');
+            }
+            if (firstName.trim() !== '' && lastName.trim() !== '' && mobile.trim() !== '') {
+                window.location.href = 'details.html';
+            }
+        });
+        $('#mobile').on('input', function () {
+            this.value = this.value.replace(/\D/g, '');
+        });
+    });
+</script>
 
 </html>
-
-

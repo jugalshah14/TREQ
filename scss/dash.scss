@@ -6,10 +6,15 @@
 .side-nav {
     background-color: #1E1E2D;
     width: 100px;
-    height: 100vh;
+    min-height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     @media only screen and (max-width: 768px) {
-            display: none;
-        }
+        display: none;
+    }
 
     .logo {
         height: 70px;
@@ -38,7 +43,6 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-top: 200px;
 
         img {
             height: 30px;
@@ -47,29 +51,94 @@
     }
 }
 
-.main-content {
-    width: 100%;
-    padding: 0 20px;
+.rectangle {
+    height: 115px;
+    border-bottom: 2px solid #EFEFEF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     @media only screen and (max-width: 768px) {
-            width: 100%;
-            padding: 0 20px;
-        }
+        width: 100%;
 
-    .rectangle {
-        height: 115px;
-        border-bottom: 2px solid #EFEFEF;
+        img {
+            display: none;
+        }
+    }
+
+    .text {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-text {
+        font-size: 25px;
 
         @media only screen and (max-width: 768px) {
-                width: 100%;
+            font-size: 15px;
+        }
+    }
+}
 
-                img{
-                    display: none;
+.container {
+    display: flex;
+
+    @media only screen and (max-width: 768px) {
+        display: block;
+    }
+
+    .main-side-container {
+        width: 30%;
+        border-right: 2px solid #EFEFEF;
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+            border-right: none;
+            height: auto;
+        }
+
+        .top-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 30px 0;
+        }
+
+        .side-button {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .card {
+                width: 90%;
+                border-radius: 8px;
+                border: 1px solid #EFEFEF;
+                background: #FFF;
+                padding: 20px 30px;
+
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
+                }
+
+                .main-text {
+                    font-family: Satoshi;
+                    font-weight: 700;
                 }
             }
+        }
+    }
+
+    .second-container {
+        margin-top: 75px;
+        margin-left: 75px;
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+            margin-top: 50px;
+            margin-left: 0px;
+        }
 
         .text {
             display: flex;
@@ -78,109 +147,35 @@
         }
 
         .main-text {
-            font-size: 25px;
-            @media only screen and (max-width: 768px) {
-                    font-size: 15px;
-                }
-        }
-    }
-
-    .container {
-        display: flex;
-
-        @media only screen and (max-width: 768px) {
-                display: block;
-            }
-
-        .main-side-container {
-            width: 30%;
-            height: 875px;
-            border-right: 2px solid #EFEFEF;
-
-            @media only screen and (max-width: 768px) {
-                    width: 100%;
-                    border-right: none;
-                    height: auto;
-                }
-
-            .top-name {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                padding: 30px 0;
-            }
-
-            .side-button {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-
-                .card {
-                    width: 90%;
-                    border-radius: 8px;
-                    border: 1px solid #EFEFEF;
-                    background: #FFF;
-                    padding: 20px 30px;
-
-                    @media only screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-
-                    .main-text {
-                        font-family: Satoshi;
-                        font-weight: 700;
-                    }
-                }
-            }
+            font-family: Satoshi;
+            font-weight: 700;
+            font-size: 20px;
         }
 
-        .second-container {
-            margin-top: 75px;
-            margin-left: 75px;
-
-            @media only screen and (max-width: 768px) {
-                    width: 100%;
-                    margin-top: 50px;
-                    margin-left: 0px;
-                }
-
-            .text {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
+        .card-container {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 40px;
 
             .main-text {
-                font-family: Satoshi;
-                font-weight: 700;
-                font-size: 20px;
+                font-size: 14px;
             }
 
-            .card-container {
+            .card-main {
                 display: inline-flex;
-                flex-direction: column;
                 gap: 20px;
-                margin-top: 40px;
 
-                .main-text {
-                    font-size: 14px;
+                img {
+                    height: max-content;
+                    position: relative;
+                    top: 10px;
                 }
+            }
 
-                .card-main {
-                    display: inline-flex;
-                    gap: 20px;
-
-                    img {
-                        height: max-content;
-                        position: relative;
-                        top: 10px;
-                    }
-                }
-                button{
-                    margin-top: 10px;
-                    width: auto;
-                }
+            button {
+                margin-top: 10px;
+                width: auto;
             }
         }
     }

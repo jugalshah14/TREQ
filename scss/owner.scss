@@ -2,277 +2,274 @@
     display: flex;
 }
 
+.rectangle {
+    height: 115px;
+    border-bottom: 2px solid #EFEFEF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.side-nav {
-    background-color: #1E1E2D;
-    width: 100px;
-    height: 100vh;
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-text {
+        font-size: 25px;
+    }
 
     @media only screen and (max-width: 768px) {
+        width: 100%;
+
+        img {
             display: none;
         }
 
-    .logo {
-        height: 70px;
-        border-bottom: 1px solid #2D2D43;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .icon {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        margin-top: 40px;
-
-        img {
-            height: 30px;
-            cursor: pointer;
-        }
-    }
-
-    .exit-icon {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 200px;
-
-        img {
-            height: 30px;
-            cursor: pointer;
+        .main-text {
+            font-size: 15px;
         }
     }
 }
 
-.main-content {
-    width: 100%;
-    padding: 0 20px;
+.main-container {
+    display: flex;
 
-    .rectangle {
-        height: 115px;
-        border-bottom: 2px solid #EFEFEF;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .text {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .main-text {
-            font-size: 25px;
-        }
-
-                 @media only screen and (max-width: 768px) {
-                     width: 100%;
-
-                     img{
-                        display: none;
-                     }
-
-                     .main-text{
-                        font-size: 15px;
-                     }
-                 }
+    @media only screen and (max-width: 768px) {
+        display: block;
     }
 
-    .main-container {
-        display: flex;
+    .main-side-container {
+        width: 20%;
+        height: 875px;
+        border-right: 2px solid #EFEFEF;
 
         @media only screen and (max-width: 768px) {
-                display: block;
-            }
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
 
-        .main-side-container {
-            width: 20%;
-            height: 875px;
-            border-right: 2px solid #EFEFEF;
+        .top-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 30px 0;
+        }
 
-            @media only screen and (max-width: 768px) {
+        .side-button {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .card-1 {
+                width: 90%;
+                border-radius: 8px;
+                border: 1px solid #EFEFEF;
+                background: #FFF;
+
+                @media only screen and (max-width: 768px) {
                     width: 100%;
-                    height: auto;
-                    border-right: none;
                 }
 
-            .top-name {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                padding: 30px 0;
+                .text {
+                    padding: 20px 30px;
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .main-text {
+                    font-family: Satoshi;
+                    font-weight: 700;
+                }
             }
 
-            .side-button {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
+            .card-2 {
+                width: 90%;
+                border-radius: 8px;
+                border: 1px solid #E06A43;
+                background: #FFF;
+                overflow: hidden;
 
-                .card-1 {
-                    width: 90%;
-                    border-radius: 8px;
-                    border: 1px solid #EFEFEF;
-                    background: #FFF;
-                    @media only screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-
-                    .text {
-                        padding: 20px 30px;
-                        gap: 10px;
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: space-between;
-                    }
-
-                    .main-text {
-                        font-family: Satoshi;
-                        font-weight: 700;
-                    }
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
                 }
 
-                .card-2 {
-                    width: 90%;
-                    height: 110px;
-                    border-radius: 8px;
-                    border: 1px solid #E06A43;
-                    background: #FFF;
-                    @media only screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-
-                    .text {
-                        padding: 20px 30px;
-                        gap: 10px;
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .main-text {
-                        font-family: Satoshi;
-                        font-weight: 700;
-                    }
-
-                    .progress-bar {
-                        position: relative;
-                        height: 4px;
-                        width: 100%;
-                        background: #eaeaea;
-                        border-radius: 25px;
-                        margin-top: 5.5px;
-                    }
-
-                    .progress-fill {
-                        position: absolute;
-                        height: 4px;
-                        width: 50%;
-                        background: linear-gradient(270deg, #E06A43 10.34%, #EFC5B8 102.72%);
-                        border-radius: 15px;
-                    }
-
-                }
-
-                .card-3 {
-                    width: 90%;
+                .text {
                     padding: 20px 30px;
-                    border-radius: 8px;
-                    border: 1px solid #EFEFEF;
-                    background: #FFF;
-                    @media only screen and (max-width: 768px) {
-                            width: 100%;
-                        }
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .main-text {
+                    font-family: Satoshi;
+                    font-weight: 700;
+                }
+
+                .progress-bar {
+                    position: relative;
+                    height: 4px;
+                    width: 100%;
+                    background: #eaeaea;
+                    border-radius: 25px;
+                    margin-top: 5.5px;
+                }
+
+                .progress-fill {
+                    position: absolute;
+                    height: 4px;
+                    width: 50%;
+                    background: linear-gradient(270deg, #E06A43 10.34%, #EFC5B8 102.72%);
+                    border-radius: 15px;
+                }
+
+            }
+
+            .card-3 {
+                width: 90%;
+                padding: 20px 30px;
+                border-radius: 8px;
+                border: 1px solid #EFEFEF;
+                background: #FFF;
+
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
                 }
             }
         }
+    }
 
-        .second-container {
-            padding-top: 0px;
-            padding-left: 75px;
-            width: 80%;
-            @media only screen and (max-width: 768px) {
-                    width: 100%;
-                    padding-left: 0;
-                    padding-top: 50px;
-                    margin-bottom: 50px;
+    .second-container {
+        padding-top: 0px;
+        padding-left: 75px;
+        width: 80%;
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+            padding-left: 0;
+            padding-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .card-2 {
+            border-radius: 8px;
+            border: 1px solid #EFEFEF;
+            background: #fff;
+            margin-top: 30px;
+
+            .load{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .loading {
+                border: 5px solid #f3f3f3;
+                border-top: 5px solid #E06A43;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
                 }
 
-            .card-2 {
-                border-radius: 8px;
-                border: 1px solid #EFEFEF;
-                background: #fff;
-                margin-top: 30px;
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
 
-                .loading {
-                        border: 5px solid #f3f3f3;
-                        border-top: 5px solid #E06A43;
-                        border-radius: 50%;
-                        width: 30px;
-                        height: 30px;
-                        animation: spin 2s linear infinite;
-                    }
-                
-                    @keyframes spin {
-                        0% {
-                            transform: rotate(0deg);
-                        }
-                
-                        100% {
-                            transform: rotate(360deg);
-                        }
-                    }
-                    .card-body{
-                        padding: 0;
-                        display: none;
-                    }
-                .padding {
-                    padding: 15px;
+            .card-body {
+                padding: 0;
+                display: none;
+            }
 
-                    .row-main {
-                        margin-top: 30px;
-                    }
+            .padding {
+                padding: 15px;
 
-                    .row-1 {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 10px;
-
-                        input {
-                            height: 40px;
-                            width: 80px;
-                            text-align: center;
-                            @media only screen and (max-width: 768px) {
-                                    width: 50%;
-                                }
-                        }
-
-                        button {
-                            padding: 0;
-                            width: 70px;
-                            margin-left: 20px;
-
-                            @media only screen and (max-width: 768px) {
-                                    padding: 10px 16px;
-                                }
-                        }
-                    }
+                .row-main {
+                    margin-top: 30px;
                 }
 
-                .image-text {
+                .row-1 {
                     display: flex;
                     flex-direction: row;
                     gap: 10px;
 
-                    img {
-                        background-color: #FFF1EC;
-                        border-radius: 25px;
-                        padding: 10px;
+                    input {
+                        height: 40px;
+                        width: 80px;
+                        text-align: center;
+
+                        @media only screen and (max-width: 768px) {
+                            width: 50%;
+                        }
                     }
+
+                    button {
+                        padding: 0;
+                        width: 70px;
+                        margin-left: 20px;
+
+                        @media only screen and (max-width: 768px) {
+                            padding: 10px 16px;
+                        }
+                    }
+                }
+            }
+
+            .image-text {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+                img {
+                    background-color: #FFF1EC;
+                    border-radius: 25px;
+                    padding: 10px;
+                }
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .main-text {
+                    font-family: Satoshi;
+                    font-weight: 500;
+                }
+
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            .pic-upload {
+                margin: 30px 0;
+                display: flex;
+                width: 100%;
+                padding: 16px 24px;
+                border-radius: 8px;
+                border: 1px dashed rgba(127, 136, 153, 0.50);
+                justify-content: space-between;
+
+                @media only screen and (max-width: 768px) {
+                    display: block;
+                }
+
+                .image-text1 {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    width: 100%;
 
                     .text {
                         display: flex;
@@ -282,84 +279,50 @@
                     .main-text {
                         font-family: Satoshi;
                         font-weight: 500;
+                        font-size: 14px;
                     }
 
                     span {
                         font-size: 12px;
                     }
-                }
 
-                .pic-upload {
-                    margin: 30px 0;
-                    display: flex;
-                    width: 100%;
-                    padding: 16px 24px;
-                    border-radius: 8px;
-                    border: 1px dashed rgba(127, 136, 153, 0.50);
-                    justify-content: space-between;
-
-                    @media only screen and (max-width: 768px) {
-                            display: block;
-                        }
-
-                    .image-text1 {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 10px;
-                        width: 100%;
-
-                        .text {
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                        .main-text {
-                            font-family: Satoshi;
-                            font-weight: 500;
-                            font-size: 14px;
-                        }
-
-                        span {
-                            font-size: 12px;
-                        }
-
-                    }
-                }
-
-                .button {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 15px;
-                    @media only screen and (max-width: 768px) {
-                            margin-top: 20px;
-                        }
                 }
             }
 
-            .card-bottom {
-                border-radius: 0px 0px 8px 8px;
-                background: #F9F8FE;
-                height: 40px;
-                padding: 10px 15px;
+            .button {
                 display: flex;
                 flex-direction: row;
-                align-items: center;
-                gap: 30px;
+                gap: 15px;
 
-                .img-text {
-                    gap: 10px;
-                    display: flex;
+                @media only screen and (max-width: 768px) {
+                    margin-top: 20px;
                 }
+            }
+        }
 
-                span {
-                    font-size: 12px;
-                    font-weight: 500;
-                }
+        .card-bottom {
+            border-radius: 0px 0px 8px 8px;
+            background: #F9F8FE;
+            height: 40px;
+            padding: 10px 15px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
 
-                hr {
-                    width: 2px;
-                    height: 100%;
-                }
+            .img-text {
+                gap: 10px;
+                display: flex;
+            }
+
+            span {
+                font-size: 12px;
+                font-weight: 500;
+            }
+
+            hr {
+                width: 2px;
+                height: 100%;
             }
         }
     }

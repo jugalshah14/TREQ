@@ -13,19 +13,13 @@
 <body>
     <div class="full-body">
         <div class="side-nav">
+            <div>
             <div class="logo">
                 <img src="./photos/Group 100000353.svg" alt="" />
             </div>
             <div class="icon">
                 <img src="./photos/Compiling.png" alt="" />
-                <img src="./photos/Library.png" alt="" />
-                <img src="./photos/Box.png" alt="" />
-                <img src="./photos/Pictures.png" alt="" />
-                <img src="./photos/Frame146.png" alt="" />
-                <img src="./photos/Attachment.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
+            </div>
             </div>
             <div class="exit-icon">
                 <img src="./photos/arr011.svg" alt="" />
@@ -101,7 +95,10 @@
                                             style="display: none">
                                     </div>
                                 </div>
+                                <span id="errorMessage" style="color: #E06A43;"></span>
+                                <div class="load">
                                 <div class="loading" style="display: none"></div>
+                                </div>
                                 <div class="hr">
                                     <hr>or
                                     <hr>
@@ -113,21 +110,25 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>Account Holder Name*</label>
-                                            <input type="text" placeholder="Enter Account Holder Name">
+                                            <input id="account-holder-name" type="text" placeholder="Enter Account Holder Name">
+                                            <span id="errorMessage1" style="color: #E06A43;"></span>
                                         </div>
                                         <div class="col-md-6">
                                             <label>Bank Name*</label>
-                                            <input type="text" placeholder="Enter Bank Name">
+                                            <input id="bank-name" type="text" placeholder="Enter Bank Name">
+                                            <span id="errorMessage2" style="color: #E06A43;"></span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>Account Number*</label>
-                                            <input type="number" placeholder="Enter Account Number">
+                                            <input id="account-number" type="number" placeholder="Enter Account Number">
+                                            <span id="errorMessage3" style="color: #E06A43;"></span>
                                         </div>
                                         <div class="col-md-6">
                                             <label>IFSC Code*</label>
-                                            <input type="text" placeholder="Enter IFSC Code">
+                                            <input id="iFSC-code" type="text" placeholder="Enter IFSC Code">
+                                            <span id="errorMessage4" style="color: #E06A43;"></span>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -175,6 +176,7 @@
                                     <option value="gbp">GBP - British Pound (£)</option>
                                     <option value="inr">INR - Indian Rupee (₨)</option>
                                 </select>
+                                <span id="dropdown-errorMessage" style="color: #E06A43;"></span>
                             </div>
                         </div>
                         <hr>
@@ -257,6 +259,7 @@
                             $("#file-name-text").text(selectedFile.name);
 
                             $(".loading").hide();
+                            $('#errorMessage').hide();
                             $(".card-body").show();
                             var uploadedValue1 = "Shah Jugal B";
                             var uploadedValue2 = "HDFC";
@@ -270,30 +273,51 @@
                             $(".my-button").hide();
                         }, 2000);
                     } else {
-                        alert("Only PDF, JPG, or PNG files are allowed.");
+                        $('#errorMessage').text('Only PDF, JPG, or PNG files are allowed.');
                         fileInput.value = "";
 
                         $(".loading").hide();
                     }
                 } else {
-                    alert("File size exceeds the maximum allowable size (200KB).");
+                    $('#errorMessage').text('File size exceeds the maximum allowable size (200KB).');
                     fileInput.value = "";
 
                     $(".loading").hide();
                 }
             }
         });
+       
         $(".submit").click(function () {
-            // Check if all input fields are filled
-            var allFieldsFilled = true;
-            $(".card-2 input[type='text'], input[type='number']").each(function () {
-                if ($(this).val() === "") {
-                    allFieldsFilled = false;
-                    return false; 
-                }
-            });
+            var accountHolderName = $("#account-holder-name").val();
+            var bankName = $("#bank-name").val();
+            var accountNumber = $("#account-number").val();
+            var iFSCCode = $("#iFSC-code").val();
 
-            if (allFieldsFilled) {
+            if (accountHolderName === "") {
+                $("#errorMessage1").text("Account Holder Name is required");
+            } else {
+                $("#errorMessage1").text("");
+            }
+
+            if (bankName === "") {
+                $("#errorMessage2").text("Bank Name is required");
+            } else {
+                $("#errorMessage2").text("");
+            }
+
+            if (accountNumber === "") {
+                $("#errorMessage3").text("Account Number is required");
+            } else {
+                $("#errorMessage3").text("");
+            }
+
+            if (iFSCCode === "") {
+                $("#errorMessage4").text("IFSC Code is required");
+            } else {
+                $("#errorMessage4").text("");
+            }
+
+            if (accountHolderName !== "" && bankName !== "" && accountNumber !== "" && iFSCCode !== "") {
                 $(".main-card-body").hide();
                 $(".padding").css("background-color", '#F2FAF7');
                 $('.image-text img').attr('src', './photos/tick.svg');
@@ -308,14 +332,12 @@
                 });
 
                 $(".cards-3 .main-card-body2").show();
-                $(".cards-3 .main-text").css('color','black');
-                
+                $(".cards-3 .main-text").css('color', 'black');
                 $(".cards-3 .lock-image").remove();
-            } else {
-                alert("Please fill in all required fields.");
             }
         });
-          $('#currencyDropdown').select2();
+     
+        $('#currencyDropdown').select2();
 
           $("#skipForNowLink").click(function (e) {
             e.preventDefault();
@@ -336,7 +358,8 @@
               $(".card-4 .main-text").css('color', 'black');
               $(".card-4 .lock-image").remove();
         });
-         $(".submit2").click(function () {
+        
+        $(".submit2").click(function () {
             if ($("#currencyDropdown option:selected").length > 0) {
                 $(".main-card-body2").hide();
                  $(".cards-3").css("background-color", '#F2FAF7');
@@ -354,7 +377,7 @@
                 $(".card-4 .main-text").css('color', 'black');
                 $(".card-4 .lock-image").remove();
             } else {
-                alert("Please select at least one currency.");
+                $("#dropdown-errorMessage").text("Select At least one currency");
             }
         });
     });

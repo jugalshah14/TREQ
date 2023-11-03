@@ -13,19 +13,13 @@
 <body>
     <div class="full-body">
         <div class="side-nav">
+            <div>
             <div class="logo">
                 <img src="./photos/Group 100000353.svg" alt="" />
             </div>
             <div class="icon">
                 <img src="./photos/Compiling.png" alt="" />
-                <img src="./photos/Library.png" alt="" />
-                <img src="./photos/Box.png" alt="" />
-                <img src="./photos/Pictures.png" alt="" />
-                <img src="./photos/Frame146.png" alt="" />
-                <img src="./photos/Attachment.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
+            </div>
             </div>
             <div class="exit-icon">
                 <img src="./photos/arr011.svg" alt="" />
@@ -93,20 +87,24 @@
                                     <input type="file" id="file-input" accept=".pdf, .jpg, .png" style="display: none">
                                 </div>
                             </div>
+                            <span id="errorMessage" style="color: #E06A43;"></span>
+                            <div class="load">
                             <div class="loading" style="display: none"></div>
+                            </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <label>PAN Number*</label>
-                                        <input type="text" placeholder="ABCD1234F" disabled>
+                                        <input type="text" placeholder="Enter PAN Number" value="ABCD1234F" disabled>
                                     </div>
                                     <div class="col-md-4">
                                         <label>Name on PAN*</label>
-                                        <input type="text" placeholder="Apollo Tyres Pvt Ltd" disabled>
+                                        <input type="text" placeholder="Enter Name On PAN" value="Apollo Tyres Pvt Ltd" disabled>
                                     </div>
                                     <div class="col-md-4">
                                         <label>Date of Birth</label>
                                         <input type="date" id="dob-input">
+                                        <span id="errorMessage1" style="color: #E06A43;"></span>
                                     </div>
                                 </div>
                                 <div class="row row-main">
@@ -118,6 +116,7 @@
                                         <input type="text" id="aadhar3" class="aadhar" maxlength="4" placeholder="-">
                                             <button id="verify-button">Verify</button>
                                         </div>
+                                        <span id="errorMessage2" style="color: #E06A43;"></span>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +140,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     const inputs = document.querySelectorAll('input[type="text"]');
-
     inputs.forEach((input, index) => {
         input.addEventListener('input', (e) => {
             input.value = input.value.replace(/\D/g, '');
@@ -153,6 +151,28 @@
             }
         });
     });
+    $(document).ready(function () {
+            $("#verify-button").click(function () {
+                var dobInput = $("#dob-input").val();
+                if (dobInput === "") {
+                    $("#errorMessage1").text("Date of Birth is required");
+                } else {
+                    $("#errorMessage1").text("");
+                }
+
+                var aadhar1 = $("#aadhar1").val();
+                var aadhar2 = $("#aadhar2").val();
+                var aadhar3 = $("#aadhar3").val();
+                if (aadhar1 === "" || aadhar2 === "" || aadhar3 === "") {
+                    $("#errorMessage2").text("Owner's Aadhar Number is required");
+                } else if (!/^\d{4}$/.test(aadhar1) || !/^\d{4}$/.test(aadhar2) || !/^\d{4}$/.test(aadhar3)) {
+                    $("#errorMessage2").text("Invalid Aadhar Number format");
+                } else {
+                    $("#errorMessage2").text("");
+                    window.location.href = "remittance.html";
+                }
+            });
+        });
 
 
     $(document).ready(function () {
@@ -177,44 +197,23 @@
                             $("#file-name-text").text(selectedFile.name);
 
                             $(".loading").hide();
+                             $('#errorMessage').hide();
                             $('.card-body').show();
                         }, 2000);
                     } else {
-                        alert("Only PDF, JPG, or PNG files are allowed.");
+                        $('#errorMessage').text('Only PDF, JPG, or PNG files are allowed.');
                         fileInput.value = "";
 
                         $(".loading").hide();
                     }
                 } else {
-                    alert("File size exceeds the maximum allowable size (200KB).");
+                    $('#errorMessage').text('File size exceeds the maximum allowable size (200KB).');
                     fileInput.value = "";
 
                     $(".loading").hide();
                 }
             }
         });
-        
-        
-        $("#verify-button").click(function () {
-            if (validateFields()) {
-                window.location.href = 'Remittance.html';
-            } else {
-                alert("Please fill in all required fields.");
-            }
-        });
-
-        function validateFields() {
-            const dobInput = document.getElementById('dob-input');
-            const aadhar1 = document.getElementById('aadhar1');
-            const aadhar2 = document.getElementById('aadhar2');
-            const aadhar3 = document.getElementById('aadhar3');
-
-            if ( !dobInput.value || !aadhar1.value || !aadhar2.value || !aadhar3.value) {
-                return false;
-            }
-
-            return true;
-        }
     });
 </script>
 

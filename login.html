@@ -30,10 +30,11 @@
                 </div>
                 <div class="login-with">
                     <label>Mobile or Email</label>
-                    <input type="text" placeholder="Enter Mobile or Email">
+                    <input type="text" id="emailOrMobile" placeholder="Enter Mobile or Email">
+                    <span id="errorMessage" style="color: #E06A43;"></span>
                 </div>
                 <div class="login-button-container">
-                    <button class="primary-button" onclick="window.location.href = 'otp.html';">Login</button>
+                    <button id="loginButton">Login</button>
                 </div>
                 <div class="hr-line">
                     <hr>
@@ -62,5 +63,21 @@
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+         $('#loginButton').click(function () {
+
+            var emailOrMobile = $('#emailOrMobile').val();
+            if (emailOrMobile.trim() === '') {
+                $('#errorMessage').text('Oops! Mobile or Email is required');
+            } else {
+                $('#errorMessage').text('');
+                localStorage.setItem('emailOrMobile', emailOrMobile);
+                window.location.href = 'otp.html';
+            }
+        });
+    });
+</script>
 
 </html>

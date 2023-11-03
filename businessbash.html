@@ -14,19 +14,13 @@
 <body>
     <div class="full-body">
         <div class="side-nav">
+            <div>
             <div class="logo">
                 <img src="./photos/Group 100000353.svg" alt="" />
             </div>
             <div class="icon">
                 <img src="./photos/Compiling.png" alt="" />
-                <img src="./photos/Library.png" alt="" />
-                <img src="./photos/Box.png" alt="" />
-                <img src="./photos/Pictures.png" alt="" />
-                <img src="./photos/Frame146.png" alt="" />
-                <img src="./photos/Attachment.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
-                <img src="./photos/Layoutarranged.png" alt="" />
+            </div>
             </div>
             <div class="exit-icon">
                 <img src="./photos/arr011.svg" alt="" />
@@ -105,7 +99,10 @@
                                     <input type="file" id="file-input" accept=".pdf, .jpg, .png" style="display: none">
                                 </div>
                             </div>
+                            <span id="errorMessage" style="color: #E06A43;"></span>
+                            <div class="load">
                             <div class="loading" style="display: none"></div>
+                            </div>
                             <div class="card-down-body">
                             <div class="row">
                                 <div class="col-md-4">
@@ -122,17 +119,19 @@
                                 </div>
                             </div>
                             <div class="row row-2">
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <label>Date of Incorporation</label>
-                                    <input type="date" placeholder="01 Jan 2000" class="dob">
+                                    <input type="date" class="dob" id="date">
+                                    <span id="dateErrorMessage" style="color: #E06A43;"></span>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label>GSTIN</label>
                                     <input type="number" placeholder="Enter GSTIN" value="3343423" disabled>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label>Billing Address*</label>
-                                    <input type="text" class="Address">
+                                    <input type="text" class="Address" id="address">
+                                    <span id="addressErrorMessage" style="color: #E06A43;"></span>
                                 </div>
                             </div>
                             <hr class="hr1">
@@ -171,7 +170,7 @@
                             <div class="col-md-5">
                                 <label>Your IEC Number</label>
                                 <div class="input-container">
-                                    <input type="text" placeholder="ABCDE1234F"><button
+                                    <input type="text" placeholder="Enter Your IEC Number" value="ABCDE1234F"><button
                                         onclick="window.location.href = 'owner.html';">Verify</button>
                                 </div>
                                 <div class="hr">
@@ -188,7 +187,7 @@
                                                 <h5 class="modal-title">Sure about applying for IEC ?</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
-                                                    <span aria-hidden="true">X</span>
+                                                    <span aria-hidden="true"><ion-icon name="close"></ion-icon></span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
@@ -209,6 +208,8 @@
             </div>
         </div>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -223,15 +224,24 @@
     });
 
     $('.submit button').click(function (e) {
-        var dobField = $('.dob');
+       var dobField = $('.dob');
         var addressField = $('.Address');
+        var dobValue = dobField.val().trim();
+        var addressValue = addressField.val().trim();
+        var addressErrorMessage = $('#addressErrorMessage');
+        var dateErrorMessage = $('#dateErrorMessage');
 
-        var isEmptyDob = !dobField.val();
-        var isEmptyAddress = !addressField.val();
+        dateErrorMessage.text('');
+        addressErrorMessage.text('');
 
-        if (isEmptyDob || isEmptyAddress) {
+        if (dobValue === '' || addressValue === '') {
             e.preventDefault();
-            alert('Please fill out all Fields.');
+            if (dobValue === '') {
+                dateErrorMessage.text('Please enter a Date of Incorporation.');
+            }
+            if (addressValue === '') {
+                addressErrorMessage.text('Please enter a Billing Address.');
+            }
         } else {
             $('.card-2 > :not(.padding)').hide();
             $('.padding').show();
@@ -253,8 +263,6 @@
 
         }
     });
-
-
 
     $(document).ready(function () {
         $("#file-upload-button").click(function () {
@@ -279,16 +287,17 @@
                             $("#file-name-text").text(selectedFile.name);
 
                             $(".loading").hide();
+                            $('#errorMessage').hide();
                             $(".card-down-body").show();
                         }, 2000);
                     } else {
-                        alert("Only PDF, JPG, or PNG files are allowed.");
+                        $('#errorMessage').text('Only PDF, JPG, or PNG files are allowed.');
                         fileInput.value = "";
 
                         $(".loading").hide();
                     }
                 } else {
-                    alert("File size exceeds the maximum allowable size (200KB).");
+                    $('#errorMessage').text('File size exceeds the maximum allowable size (200KB).');
                     fileInput.value = "";
 
                     $(".loading").hide();

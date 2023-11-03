@@ -2,473 +2,286 @@
     display: flex;
 }
 
+.rectangle {
+    height: 115px;
+    border-bottom: 2px solid #EFEFEF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.side-nav {
-    background-color: #1E1E2D;
-    width: 100px;
-    height: 100vh;
     @media only screen and (max-width: 768px) {
+        width: 100%;
+
+        img {
             display: none;
         }
-
-    .logo {
-        height: 70px;
-        border-bottom: 1px solid #2D2D43;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
-    .icon {
-        width: 100%;
+    .text {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        margin-top: 40px;
-
-        img {
-            height: 30px;
-            cursor: pointer;
-        }
+        gap: 10px;
     }
 
-    .exit-icon {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 200px;
+    .main-text {
+        font-size: 25px;
 
-        img {
-            height: 30px;
-            cursor: pointer;
+        @media only screen and (max-width: 768px) {
+            font-size: 15px;
         }
     }
 }
 
-.main-content {
-    width: 100%;
-    padding: 0 20px;
+.main-container {
+    display: flex;
 
     @media only screen and (max-width: 768px) {
-            width: 100%;
-            padding: 0 20px;
-        }
+        width: 100%;
+        display: block;
+    }
 
-    .rectangle {
-        height: 115px;
-        border-bottom: 2px solid #EFEFEF;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .main-side-container {
+        width: 30%;
+        border-right: 2px solid #EFEFEF;
 
         @media only screen and (max-width: 768px) {
-                width: 100%;
+            width: 100%;
+            border-right: none;
+            height: auto;
+        }
 
-                img{
-                    display: none;
+        .top-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 30px 0;
+        }
+
+        .side-button {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .cards-1 {
+                width: 90%;
+                border-radius: 8px;
+                border: 1px solid #E06A43;
+                background: #FFF;
+                overflow: hidden;
+
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
+                }
+
+                .text {
+                    padding: 20px 30px;
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .main-text {
+                    font-family: Satoshi;
+                    font-weight: 700;
+                }
+
+                .progress-bar {
+                    position: relative;
+                    height: 4px;
+                    width: 100%;
+                    background: #eaeaea;
+                    border-radius: 25px;
+                    margin-top: 5.5px;
+                }
+
+                .progress-fill {
+                    position: absolute;
+                    height: 4px;
+                    width: 33%;
+                    background: linear-gradient(270deg, #E06A43 10.34%, #EFC5B8 102.72%);
+                    border-radius: 15px;
                 }
             }
 
-        .text {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+            .cards-2 {
+                width: 90%;
+                padding: 20px 30px;
+                border-radius: 8px;
+                border: 1px solid #EFEFEF;
+                background: #FFF;
 
-        .main-text {
-            font-size: 25px;
-            @media only screen and (max-width: 768px) {
-                    font-size: 15px;
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
                 }
+
+            }
+
+            .cards-3 {
+                width: 90%;
+                padding: 20px 30px;
+                border-radius: 8px;
+                border: 1px solid #EFEFEF;
+                background: #FFF;
+
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
+                }
+            }
         }
     }
 
-    .main-container {
-        display: flex;
+    .second-container {
+        padding-top: 75px;
+        padding-left: 75px;
+        width: 70%;
 
         @media only screen and (max-width: 768px) {
-                width: 100%;
-                display: block;
-            }
-
-        .main-side-container {
-            width: 30%;
-            height: 875px;
-            border-right: 2px solid #EFEFEF;
-
-            @media only screen and (max-width: 768px) {
-                    width: 100%;
-                    border-right: none;
-                    height: auto;
-                }
-
-            .top-name {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                padding: 30px 0;
-            }
-
-            .side-button {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-
-                .cards-1 {
-                    width: 90%;
-                    height: 110px;
-                    border-radius: 8px;
-                    border: 1px solid #E06A43;
-                    background: #FFF;
-                    @media only screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-
-                    .text {
-                        padding: 20px 30px;
-                        gap: 10px;
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .main-text {
-                        font-family: Satoshi;
-                        font-weight: 700;
-                    }
-
-                    .progress-bar {
-                        position: relative;
-                        height: 4px;
-                        width: 100%;
-                        background: #eaeaea;
-                        border-radius: 25px;
-                        margin-top: 5.5px;
-                    }
-
-                    .progress-fill {
-                        position: absolute;
-                        height: 4px;
-                        width: 33%;
-                        background: linear-gradient(270deg, #E06A43 10.34%, #EFC5B8 102.72%);
-                        border-radius: 15px;
-                    }
-                }
-
-                .cards-2 {
-                    width: 90%;
-                    padding: 20px 30px;
-                    border-radius: 8px;
-                    border: 1px solid #EFEFEF;
-                    background: #FFF;
-                    @media only screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-
-                }
-
-                .cards-3 {
-                    width: 90%;
-                    padding: 20px 30px;
-                    border-radius: 8px;
-                    border: 1px solid #EFEFEF;
-                    background: #FFF;
-                    @media only screen and (max-width: 768px) {
-                            width: 100%;
-                        }
-                }
-            }
+            width: 100%;
+            padding-top: 50px;
+            padding-left: 0;
         }
 
-        .second-container {
-            padding-top: 75px;
-            padding-left: 75px;
-            width: 70%;
-            @media only screen and (max-width: 768px) {
-                    width: 100%;
-                    padding-top: 50px;
-                    padding-left: 0;
-                }
+        .card-1 {
+            display: flex;
+            border-radius: 8px;
+            border: 0px solid #EFEFEF;
+            background: #F2FAF7;
+            padding: 15px;
+            justify-content: space-between;
+            align-items: center;
 
-            .card-1 {
-                display: flex;
-                border-radius: 8px;
-                border: 0px solid #EFEFEF;
-                background: #F2FAF7;
-                padding: 15px;
-                justify-content: space-between;
-                align-items: center;
-
-                .image-text {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 10px;
-
-                    .text {
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .main-text {
-                        font-family: Satoshi;
-                        font-weight: 500;
-                    }
-
-                    span {
-                        font-size: 12px;
-                    }
-                }
-
-                .message {
-                    span {
-                        color: #00A25B;
-                        font-size: 12px;
-                        font-weight: 500;
-                    }
-                }
-            }
-
-            .card-2 {
-                border-radius: 8px;
-                border: 1px solid #EFEFEF;
-                background: #fff;
-                margin-top: 30px;
-
-                .card-body{
-                    padding: 0 15px 15px 15px;
-                }
-
-                .card-down-body{
-                    display: none;
-                }
-
-                .loading {
-                        border: 5px solid #f3f3f3;
-                        border-top: 5px solid #E06A43;
-                        border-radius: 50%;
-                        width: 30px;
-                        height: 30px;
-                        animation: spin 2s linear infinite;
-                    }
-                
-                    @keyframes spin {
-                        0% {
-                            transform: rotate(0deg);
-                        }
-                
-                        100% {
-                            transform: rotate(360deg);
-                        }
-                    }
-
-                .row-2 {
-                    margin-top: 20px;
-                }
-
-                .hr1 {
-                    margin-top: 50px;
-                }
-
-                .submit {
-                    justify-content: end;
-                    display: flex;
-                }
-
-                .padding {
-                    padding: 15px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                }
-
-                .image-text {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 10px;
-
-                    img {
-                        background-color: #FFF1EC;
-                        border-radius: 25px;
-                        padding: 10px;
-                    }
-
-                    .text {
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .main-text {
-                        font-family: Satoshi;
-                        font-weight: 500;
-                    }
-
-                    span {
-                        font-size: 12px;
-                    }
-                }
-
-                .pic-upload {
-                    margin: 30px 0;
-                    display: flex;
-                    width: 100%;
-                    padding: 16px 24px;
-                    border-radius: 8px;
-                    border: 1px dashed rgba(127, 136, 153, 0.50);
-                    justify-content: space-between;
-
-                    @media only screen and (max-width: 768px) {
-                            display: block;
-                        }
-
-                    .image-text1 {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 10px;
-                        width: 100%;
-
-                        .text {
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                        .main-text {
-                            font-family: Satoshi;
-                            font-weight: 500;
-                            font-size: 14px;
-                        }
-
-                        span {
-                            font-size: 12px;
-                        }
-
-                    }
-                }
-
-                .button {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 15px;
-
-                    @media only screen and (max-width: 768px) {
-                            margin-top:20px;
-                        }
-                }
-            }
-
-            .card-bottom {
-                border-radius: 0px 0px 8px 8px;
-                background: #F9F8FE;
-                height: 40px;
-                padding: 10px 15px;
+            .image-text {
                 display: flex;
                 flex-direction: row;
-                align-items: center;
-                gap: 30px;
+                gap: 10px;
 
-                .img-text {
-                    gap: 10px;
+                .text {
                     display: flex;
+                    flex-direction: column;
+                }
+
+                .main-text {
+                    font-family: Satoshi;
+                    font-weight: 500;
                 }
 
                 span {
                     font-size: 12px;
-                    font-weight: 500;
-                }
-
-                hr {
-                    width: 1px;
-                    height: 100%;
                 }
             }
 
-            .card-3 {
-                border-radius: 8px;
-                border: 1px solid #EFEFEF;
+            .message {
+                span {
+                    color: #00A25B;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .card-2 {
+            border-radius: 8px;
+            border: 1px solid #EFEFEF;
+            background: #fff;
+            margin-top: 30px;
+
+            .card-body {
+                padding: 0 15px 15px 15px;
+            }
+
+            .card-down-body {
+                display: none;
+            }
+            .load{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .loading {
+                border: 5px solid #f3f3f3;
+                border-top: 5px solid #E06A43;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .row-2 {
+                margin-top: 20px;
+            }
+
+            .hr1 {
+                margin-top: 50px;
+            }
+
+            .submit {
+                justify-content: end;
+                display: flex;
+            }
+
+            .padding {
                 padding: 15px;
-                margin-top: 30px;
-                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
 
-                .row-2 {
-                    display: none;
-                    margin-top: 50px;
-                    margin-left: 35px;
+            .image-text {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
 
-                    @media only screen and (max-width: 768px) {
-                            width: 100%;
-
-                            .col-md-5{
-                                max-width: 100%;
-                                flex: 100%;
-                                margin-right: 20px;
-                            }
-                        }
-
-                    .hr {
-                        display: flex !important;
-                        align-items: center;
-                        gap: 20px;
-                        margin: 10px 0px;
-
-                        hr {
-                            width: 100%;
-                        }
-                    }
-
-                    .persnol-button {
-                        width: 100%;
-                        background-color: white;
-                        color: #E06A43;
-                        border-radius: 8px;
-                        border: 1px solid rgba(127, 136, 153, 0.20);
-                    }
-
-                    .input-container {
-                        width: 100%;
-                        padding: 10px;
-                        border-radius: 8px;
-                        border: 1px solid rgba(127, 136, 153, 0.20);
-                        display: flex;
-
-                        input:focus,
-                        input:active {
-                            outline: none;
-                        }
-
-                        input {
-                            width: 100%;
-                            border: none;
-                            padding: 0;
-                        }
-
-                        button {
-                            float: right;
-                            padding: 0 10px;
-                        }
-                    }
+                img {
+                    background-color: #FFF1EC;
+                    border-radius: 25px;
+                    padding: 10px;
                 }
 
-                .card-main {
-                    justify-content: space-between;
-                    align-items: center;
+                .text {
                     display: flex;
+                    flex-direction: column;
                 }
 
-                .image-text3 {
+                .main-text {
+                    font-family: Satoshi;
+                    font-weight: 500;
+                }
+
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            .pic-upload {
+                margin: 30px 0;
+                display: flex;
+                width: 100%;
+                padding: 16px 24px;
+                border-radius: 8px;
+                border: 1px dashed rgba(127, 136, 153, 0.50);
+                justify-content: space-between;
+
+                @media only screen and (max-width: 768px) {
+                    display: block;
+                }
+
+                .image-text1 {
                     display: flex;
                     flex-direction: row;
                     gap: 10px;
-
-                    .image1 {
-                        background: #F6F8FE;
-                        display: flex;
-                        height: 40px;
-                        width: 40px;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 25px;
-                    }
+                    width: 100%;
 
                     .text {
                         display: flex;
@@ -477,25 +290,166 @@
 
                     .main-text {
                         font-family: Satoshi;
-                        color: #7F8899;
                         font-weight: 500;
+                        font-size: 14px;
                     }
 
                     span {
                         font-size: 12px;
                     }
+
+                }
+            }
+
+            .button {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+
+                @media only screen and (max-width: 768px) {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .card-bottom {
+            border-radius: 0px 0px 8px 8px;
+            background: #F9F8FE;
+            height: 40px;
+            padding: 10px 15px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+
+            .img-text {
+                gap: 10px;
+                display: flex;
+            }
+
+            span {
+                font-size: 12px;
+                font-weight: 500;
+            }
+
+            hr {
+                width: 1px;
+                height: 100%;
+            }
+        }
+
+        .card-3 {
+            border-radius: 8px;
+            border: 1px solid #EFEFEF;
+            padding: 15px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            .row-2 {
+                display: none;
+                margin-top: 50px;
+                margin-left: 35px;
+
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
+
+                    .col-md-5 {
+                        max-width: 100%;
+                        flex: 100%;
+                        margin-right: 20px;
+                    }
                 }
 
-                .image2 {
-                    background: #FEF6F6;
+                .hr {
+                    display: flex !important;
+                    align-items: center;
+                    gap: 20px;
+                    margin: 10px 0px;
+
+                    hr {
+                        width: 100%;
+                    }
+                }
+
+                .persnol-button {
+                    width: 100%;
+                    background-color: white;
+                    color: #E06A43;
+                    border-radius: 8px;
+                    border: 1px solid rgba(127, 136, 153, 0.20);
+                }
+
+                .input-container {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: 1px solid rgba(127, 136, 153, 0.20);
+                    display: flex;
+
+                    input:focus,
+                    input:active {
+                        outline: none;
+                    }
+
+                    input {
+                        width: 100%;
+                        border: none;
+                        padding: 0;
+                    }
+
+                    button {
+                        float: right;
+                        padding: 0 10px;
+                    }
+                }
+            }
+
+            .card-main {
+                justify-content: space-between;
+                align-items: center;
+                display: flex;
+            }
+
+            .image-text3 {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+                .image1 {
+                    background: #F6F8FE;
                     display: flex;
                     height: 40px;
                     width: 40px;
                     align-items: center;
                     justify-content: center;
                     border-radius: 25px;
-
                 }
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .main-text {
+                    font-family: Satoshi;
+                    color: #7F8899;
+                    font-weight: 500;
+                }
+
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            .image2 {
+                background: #FEF6F6;
+                display: flex;
+                height: 40px;
+                width: 40px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 25px;
+
             }
         }
     }

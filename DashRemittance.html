@@ -15,17 +15,19 @@
 <body>
     <div class="full-body">
         <div class="side-nav">
+            <div>
             <div class="logo">
                 <img src="./photos/Group 100000353.svg" alt="" />
             </div>
             <div class="icon">
                 <img src="./photos/Compiling1.svg" alt="" />
             </div>
-            <!-- <div class="exit-icon">
+            </div>
+            <div class="exit-icon">
                 <img src="./photos/arr011.svg" alt="" />
-            </div> -->
+            </div>
         </div>
-        <div class="main-container">
+        <div class="main-content">
             <div class="top-contant">
                 <h1 class="main-text">Cross Border Remittance</h1>
             </div>
@@ -477,31 +479,31 @@
                                                     name="chevron-expand"></ion-icon>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="payer">
                                             <div class="th-text">
                                                 <span class="primary-text">URN</span><ion-icon
                                                     name="chevron-expand"></ion-icon>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="payer">
                                             <div class="th-text">
                                                 <span class="primary-text">Amount</span><ion-icon
                                                     name="chevron-expand"></ion-icon>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="payer">
                                             <div class="th-text">
                                                 <span class="primary-text">Currency</span><ion-icon
                                                     name="chevron-expand"></ion-icon>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="status">
                                             <div class="th-text">
                                                 <span class="primary-text">Status</span><ion-icon
                                                     name="funnel"></ion-icon>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="date">
                                             <div class="th-text">
                                                 <span class="primary-text">Date</span>
                                                 <div>
@@ -573,12 +575,12 @@
 
             data.forEach(function (item) {
                 var row = '<tr>';
-                row += '<td>' + item.payer + '</td>';
-                row += '<td>' + item.urn + '</td>';
-                row += '<td>' + item.amount + '</td>';
-                row += '<td>' + item.currency + '</td>';
-                row += '<td>' + item.status + '</td>';
-                row += '<td>' + item.date + '</td>';
+                row += '<td class="payer">' + item.payer + '</td>';
+                row += '<td class="payer">' + item.urn + '</td>';
+                row += '<td class="payer">' + item.amount + '</td>';
+                row += '<td class="payer">' + item.currency + '</td>';
+                row += '<td class="status">' + item.status + '</td>';
+                row += '<td class="date">' + item.date + '</td>';
                 row += '</tr>';
 
                 tbody.append(row);

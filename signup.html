@@ -29,12 +29,13 @@
                 </div>
                 <div class="signUp-with">
                     <label>Email</label>
-                    <input type="text" placeholder="Enter Email">
+                    <input type="text" id="email" placeholder="Enter Email">
+                    <span id="errorMessage" style="color: #E06A43;"></span>
                 </div>
                 <div class="signUp-button-container">
                     <a href="login.html" class="back-login" ><img alt=""
                             src="./photos/Interface Arrows Button Left.svg"> &nbsp; Back to login</a>
-                    <button class="primary-button" onclick="window.location.href = 'signupdetail.html';">Signup</button>
+                    <button class="signup">Signup</button>
                 </div>
                 <div class="hr-line">
                     <hr>
@@ -64,5 +65,21 @@
     </div>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.signup').click(function () {
+
+            var email = $('#email').val();
+            if (email.trim() === '') {
+                $('#errorMessage').text('Oops! Email is required');
+            } else {
+                $('#errorMessage').text('');
+                localStorage.setItem('email', email);
+                window.location.href = 'signupdetail.html';
+            }
+        });
+    });
+</script>
 
 </html>

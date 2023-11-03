@@ -17,19 +17,22 @@
                 <div class="first-section">
                 <div>
                     <span class="main-text">Enter OTP to verify</span><br>
-                    <span>You’ve got a message! Enter the 4-digit confirmation code we’ve sent you on 9723777004</span>
+                    <span id="mobileOrEmailText">You’ve got a message! Enter the 4-digit confirmation code we’ve sent you on</span>
                 </div>
                 <div class="check-boxs">
-                    <input class="check-box" type="text" />
-                    <input class="check-box" type="text" />
-                    <input class="check-box" type="text" />
-                    <input class="check-box" type="text" />
-                </div></div>
+                    <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
+                    <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
+                    <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
+                    <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
+                </div>
+                <span class="error-message" style="color: #E06A43;"></span>
+            </div>
                 <div class="resend-text">
-                <span>Resend Code in<span class="second-line"> 00:20</span></span></div>
+                <span>Resend Code in<span class="second-line" id="countdown"> 00:30</span></span>
+            </div>
                 <div class="Proceed-button-container">
                     <a href="login.html" class="back-login"><img alt="" src="./photos/Interface Arrows Button Left.svg"> &nbsp; Back to login</a>
-                    <button class="primary-button">Proceed</button>
+                    <button id="proceedButton">Proceed</button>
                 </div>
             </div>
         </div>
@@ -52,4 +55,69 @@
     </div>
     
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var savedEmailOrMobile = localStorage.getItem('emailOrMobile');
+
+        if (savedEmailOrMobile) {
+            var mobileOrEmailText = $('#mobileOrEmailText');
+            mobileOrEmailText.html("You’ve got a message! Enter the 4-digit confirmation code we’ve sent you on " + savedEmailOrMobile);
+        }
+
+        var countdownElement = $('#countdown');
+        var seconds = 30;
+
+        function updateCountdown() {
+            var minutes = Math.floor(seconds / 60);
+            var remainingSeconds = seconds % 60;
+
+            var formattedTime = (minutes < 10 ? "0" : "") + minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
+            countdownElement.text(" " + formattedTime);
+
+            if (seconds > 0) {
+                seconds--;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                countdownElement.text(" 00:00");
+                countdownElement.parent().html("Didn't receive OTP? <span class='second-line'>Resend Code</span>");
+            }
+        }
+
+        updateCountdown();
+
+         const inputs = document.querySelectorAll('input[type="text"]');
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                input.value = input.value.replace(/\D/g, '');
+
+                if (input.value.length === 1) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                }
+            });
+        });
+
+        function areInputFieldsFilled() {
+            var areFilled = true;
+            $('.check-box').each(function () {
+                if ($(this).val() === '') {
+                    areFilled = false;
+                    return false;
+                }
+            });
+            return areFilled;
+        }
+
+        $('#proceedButton').click(function () {
+            if (areInputFieldsFilled()) {
+                window.location.href = 'dash.html';
+            } else {
+                $('.error-message').text('Please fill in all input fields before proceeding.');
+                return false;
+            }
+        });
+    });
+</script>
 </html>

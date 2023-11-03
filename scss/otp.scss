@@ -15,6 +15,7 @@
     display: flex;
     width: 50vw;
     justify-content: center;
+    padding: 0 20px;  
 
     @media only screen and (max-width: 768px) {
         width: 100%;
@@ -40,9 +41,8 @@
 
             .check-box {
                 width: 40px;
-                padding: 8px 16px;
-                border-radius: 8px;
-                border: 1px solid rgba(127, 136, 153, 0.20);
+                padding: 0;
+                text-align: center;
             }
         }
     }
@@ -88,6 +88,7 @@
     }
 
     .side-text {
+        width: 100%;
         left: 80px;
         position: absolute;
         color: #FFF;
@@ -96,6 +97,10 @@
         font-weight: 700;
         line-height: 48px;
         text-transform: capitalize;
+        @media only screen and (max-width: 1024px) {
+                left: 30px;
+                width: 90%;
+            }
     }
 
     .first-image {
@@ -120,7 +125,7 @@
             right: 0;
             position: absolute;
 
-            @media only screen and (max-width: 1440px) {
+            @media only screen and (max-width: 1540px) {
                 height: 550px;
             }
         }
@@ -130,7 +135,7 @@
             bottom: 335px;
             right: 0;
 
-            @media only screen and (max-width: 1440px) {
+            @media only screen and (max-width: 1540px) {
                 bottom: 265px;
                 right: 0;
             }
@@ -138,7 +143,7 @@
             img {
                 height: 155px;
 
-                @media only screen and (max-width: 1440px) {
+                @media only screen and (max-width: 1540px) {
                     height: 120px;
                 }
             }
@@ -149,15 +154,15 @@
             bottom: 50px;
             left: 150px;
 
-            @media only screen and (max-width: 1440px) {
-                bottom: 20px;
-                left: 55px;
+            @media only screen and (max-width: 1540px) {
+                bottom: 30px;
+                left: 110px;
             }
 
             img {
                 height: 270px;
 
-                @media only screen and (max-width: 1440px) {
+                @media only screen and (max-width: 1540px) {
                     height: 230px;
                 }
             }

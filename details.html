@@ -14,7 +14,7 @@
             <img alt="" src="./photos/Group 1000003533.svg" />
         </div>
         <div class="details">
-            <span class="first-line">aditvaidya@gmail.com</span>
+            <span class="first-line" id="EmailText"></span>
             <a href="login.html">Sign Out</a>
         </div>
     </div>
@@ -23,40 +23,43 @@
             <div class="signUp-card">
                 <div>
                     <span class="main-text">Share few of your business details</span><br>
-                    <span class="welcome-text">We collect these business details to customise your TreQ experience</span>
+                    <span class="welcome-text">We collect these business details to customise your TreQ
+                        experience</span>
                 </div>
                 <div class="names">
-                <div class="dropdown">
-                    <label for="business-type">Business Type*</label>
-                    <select id="business-type" name="business-type">
-                        <option value="">Select Business Type</option>
-                        <option value="type1"><span>Type 1</span></option>
-                        <option value="type2"><span>Type 1</span></option>
-                        <option value="type3"><span>Type 1</span></option>
-                    </select>
-                </div>
+                    <div class="dropdown">
+                        <label for="business-type">Business Type*</label>
+                        <select id="business-type" name="business-type">
+                            <option value="">Select Business Type</option>
+                            <option value="type1"><span>Type 1</span></option>
+                            <option value="type2"><span>Type 1</span></option>
+                            <option value="type3"><span>Type 1</span></option>
+                        </select>
+                        <span id="errorMessage1" style="color: #E06A43;"></span>
+                    </div>
                 </div>
                 <div class="mobile">
                     <label>Business Name as per PAN*</label>
                     <input type="text" placeholder="Enter your business name">
+                    <span id="errorMessage2" style="color: #E06A43;"></span>
                 </div>
-
 
                 <div class="signUp-button-container">
                     <a href="signupdetail.html" class="back">Back</a>
-                    <button class="primary-button" onclick="window.location.href = 'dash.html';">Proceed</button>
+                    <button class="proceed">Proceed</button>
                 </div>
             </div>
         </div>
         <div class="other-side">
-            
+
             <div class="main-card">
                 <div class="card-img">
-                <img alt="" src="./photos/Frame.svg">
+                    <img alt="" src="./photos/Frame.svg">
                 </div>
                 <div class="card-text">
                     <p>Hurray ! You have joined us as a Trequer</p>
-                    <span>Your Trequer profile is almost set up just a few tweaks here and there and then you will be able to experience Treq.</span>
+                    <span>Your Trequer profile is almost set up just a few tweaks here and there and then you will be
+                        able to experience Treq.</span>
                 </div>
             </div>
             <div class="image">
@@ -69,5 +72,38 @@
     </div>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var savedEmail = localStorage.getItem('email');
+
+        if (savedEmail) {
+            var EmailText = $('#EmailText');
+            EmailText.html(savedEmail);
+        }
+
+         $(".proceed").click(function () {
+            var businessType = $("#business-type").val();
+            var businessName = $(".mobile input").val();
+            var errorMessage1 = $("#errorMessage1");
+            var errorMessage2 = $("#errorMessage2");
+
+            errorMessage1.text('');
+            errorMessage2.text('');
+
+            if (businessType === '') {
+                errorMessage1.text('Please select a Business Type.');
+                return false;
+            }
+
+            if (businessName.trim() === '') {
+                errorMessage2.text('Please enter your business name as per PAN.');
+                return false;
+            }
+
+            window.location.href = 'dash.html';
+        });
+    });
+</script>
 
 </html>

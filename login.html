@@ -66,18 +66,22 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-         $('#loginButton').click(function () {
+            $('#emailOrMobile').on('input', function () {
+                $('#errorMessage').text(''); // Clear the error message when the input field changes
+            });
 
-            var emailOrMobile = $('#emailOrMobile').val();
-            if (emailOrMobile.trim() === '') {
-                $('#errorMessage').text('Oops! Mobile or Email is required');
-            } else {
-                $('#errorMessage').text('');
-                localStorage.setItem('emailOrMobile', emailOrMobile);
-                window.location.href = 'otp.html';
-            }
+            $('#loginButton').click(function () {
+                var emailOrMobile = $('#emailOrMobile').val();
+                if (emailOrMobile.trim() === '') {
+                    $('#errorMessage').text('Oops! Mobile or Email is required');
+                } else {
+                    $('#errorMessage').text('');
+                    localStorage.setItem('emailOrMobile', emailOrMobile);
+                    window.location.href = 'otp.html';
+                }
+            });
         });
-    });
+
 </script>
 
 </html>

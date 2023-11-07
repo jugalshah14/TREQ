@@ -105,7 +105,7 @@
         .main-container .main-side-container .side-button .card-3 .progress-fill {
           position: absolute;
           height: 4px;
-          width: 50%;
+          width: 0%;
           background: linear-gradient(270deg, #E06A43 10.34%, #EFC5B8 102.72%);
           border-radius: 15px; }
   .main-container .second-container {
@@ -239,14 +239,6 @@
         .main-container .second-container .cards-3 .drop-down1 select {
           height: auto;
           outline: none; }
-      .main-container .second-container .cards-3 .select2-selection__choice {
-        background-color: #E06A43;
-        color: white;
-        padding: 5px; }
-      .main-container .second-container .cards-3 .select2-selection__choice__remove {
-        color: white; }
-      .main-container .second-container .cards-3 .select2-results__option {
-        padding: 10px; }
       .main-container .second-container .cards-3 .card-main {
         justify-content: space-between;
         align-items: center;

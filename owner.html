@@ -52,7 +52,10 @@
                         <div class="card-2">
                             <div class="text">
                                 <p class="main-text">Owner/Director KYC Setup</p>
-                                <p class="main-text">50% <span>Completed</span></p>
+                                <div class="d-flex" style="align-items: center; gap: 10px;">
+                                    <p class="main-text" id="per">0% </p>
+                                    <span>Completed</span>
+                                </div>
                             </div>
                             <div class="progress-bar">
                                 <div class="progress-fill"></div>
@@ -103,7 +106,10 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label>Date of Birth</label>
-                                        <input type="date" id="dob-input">
+                                        <div class="input-container">
+                                            <input placeholder="Select Date of Incorporation" type="text" name="checkIn" value="" class="dob datepicker">
+                                            <ion-icon name="calendar-outline" class="calendar-icon"></ion-icon>
+                                        </div>
                                         <span id="errorMessage1" style="color: #E06A43;"></span>
                                     </div>
                                 </div>
@@ -136,24 +142,46 @@
                 </div>
             </div>
         </div>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="comman.js"></script>
 <script>
     const inputs = document.querySelectorAll('input[type="text"]');
-    inputs.forEach((input, index) => {
-        input.addEventListener('input', (e) => {
-            input.value = input.value.replace(/\D/g, '');
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                input.value = input.value.replace(/\D/g, '');
 
-            if (input.value.length === 4) {
-                if (index < inputs.length - 1) {
-                    inputs[index + 1].focus();
+                if (input.value.length === 0) {
+                    if (index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                } else if (input.value.length === 4) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
                 }
-            }
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value.length === 0) {
+                    if (index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                } else if (e.key !== 'Backspace' && input.value.length === 4) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                }
+            });
         });
-    });
+
     $(document).ready(function () {
             $("#verify-button").click(function () {
-                var dobInput = $("#dob-input").val();
+                var dobInput = $(".dob").val();
                 if (dobInput === "") {
                     $("#errorMessage1").text("Date of Birth is required");
                 } else {
@@ -172,7 +200,16 @@
                     window.location.href = "remittance.html";
                 }
             });
+
+            $("#dob-input").on('input', function () {
+                $("#errorMessage1").text('');
+            });
+
+            $("#aadhar1, #aadhar2, #aadhar3").on('input', function () {
+                $("#errorMessage2").text('');
+            });
         });
+
 
 
     $(document).ready(function () {
@@ -197,8 +234,14 @@
                             $("#file-name-text").text(selectedFile.name);
 
                             $(".loading").hide();
-                             $('#errorMessage').hide();
+                            $('#errorMessage').hide();
                             $('.card-body').show();
+                             $('.progress-fill').css('width', '50%')
+                            var percentageElement = $('#per');
+
+                            var currentPercentage = parseInt(percentageElement.text());
+
+                            percentageElement.text('50%');
                         }, 2000);
                     } else {
                         $('#errorMessage').text('Only PDF, JPG, or PNG files are allowed.');

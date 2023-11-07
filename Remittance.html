@@ -58,7 +58,10 @@
                         <div class="card-3">
                             <div class="text">
                                 <p class="main-text">Remittance Setup</p>
-                                <p class="main-text">50% <span>Completed</span></p>
+                                <div class="d-flex" style="align-items: center; gap: 10px;">
+                                    <p class="main-text" id="per">0%</p>
+                                    <span>Completed</span>
+                                </div>
                             </div>
                             <div class="progress-bar">
                                 <div class="progress-fill"></div>
@@ -171,10 +174,10 @@
                             <div class="col-md-4">
                                 <label>Select Global Currency*</label>
                                 <select id="currencyDropdown" multiple="multiple" style="width: 100%;">
-                                    <option value="usd">USD - US Dollar ($)</option>
-                                    <option value="eur">EUR - Euro (€)</option>
-                                    <option value="gbp">GBP - British Pound (£)</option>
-                                    <option value="inr">INR - Indian Rupee (₨)</option>
+                                    <option value="usd">USD</option>
+                                    <option value="eur">EUR</option>
+                                    <option value="gbp">GBP</option>
+                                    <option value="inr">INR</option>
                                 </select>
                                 <span id="dropdown-errorMessage" style="color: #E06A43;"></span>
                             </div>
@@ -286,6 +289,7 @@
                 }
             }
         });
+        
        
         $(".submit").click(function () {
             var accountHolderName = $("#account-holder-name").val();
@@ -330,12 +334,19 @@
                     'color': '#00A25B',
                     'font-size': '12px'
                 });
+                $('.progress-fill').css('width', '33%')
+                var percentageElement = $('#per');
+
+                var currentPercentage = parseInt(percentageElement.text());
+
+                percentageElement.text('33%');
 
                 $(".cards-3 .main-card-body2").show();
                 $(".cards-3 .main-text").css('color', 'black');
                 $(".cards-3 .lock-image").remove();
             }
         });
+        
      
         $('#currencyDropdown').select2();
 
@@ -354,6 +365,12 @@
                   'color': '#00A25B',
                   'font-size': '12px'
               });
+              $('.progress-fill').css('width', '66%')
+              var percentageElement = $('#per');
+
+              var currentPercentage = parseInt(percentageElement.text());
+
+              percentageElement.text('66%');
               $(".card-4 .main-card-body3").show();
               $(".card-4 .main-text").css('color', 'black');
               $(".card-4 .lock-image").remove();
@@ -373,6 +390,12 @@
                     'color': '#00A25B',
                     'font-size': '12px'
                 });
+                $('.progress-fill').css('width', '66%')
+                var percentageElement = $('#per');
+
+                var currentPercentage = parseInt(percentageElement.text());
+
+                percentageElement.text('66%');
                 $(".card-4 .main-card-body3").show();
                 $(".card-4 .main-text").css('color', 'black');
                 $(".card-4 .lock-image").remove();

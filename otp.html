@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./css/otp.css">
     <title>otp</title>
 </head>
+
 <body>
     <div class="logo">
         <img alt="" src="./photos/Group 1000003533.svg" />
@@ -15,23 +17,25 @@
         <div class="otp-container">
             <div class="otp-card">
                 <div class="first-section">
-                <div>
-                    <span class="main-text">Enter OTP to verify</span><br>
-                    <span id="mobileOrEmailText">You’ve got a message! Enter the 4-digit confirmation code we’ve sent you on</span>
+                    <div>
+                        <span class="main-text">Enter OTP to verify</span><br>
+                        <span id="mobileOrEmailText">You’ve got a message! Enter the 4-digit confirmation code we’ve
+                            sent you on</span>
+                    </div>
+                    <div class="check-boxs">
+                        <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
+                        <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
+                        <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
+                        <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
+                    </div>
+                    <span class="error-message" style="color: #E06A43;"></span>
                 </div>
-                <div class="check-boxs">
-                    <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
-                    <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
-                    <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
-                    <input class="check-box" type="text" maxlength="1" pattern="[0-9]" />
-                </div>
-                <span class="error-message" style="color: #E06A43;"></span>
-            </div>
                 <div class="resend-text">
-                <span>Resend Code in<span class="second-line" id="countdown"> 00:30</span></span>
-            </div>
+                    <span>Resend Code in<span class="second-line" id="countdown"> 00:30</span></span>
+                </div>
                 <div class="Proceed-button-container">
-                    <a href="login.html" class="back-login"><img alt="" src="./photos/Interface Arrows Button Left.svg"> &nbsp; Back to login</a>
+                    <a href="login.html" class="back-login"><img alt="" src="./photos/Interface Arrows Button Left.svg">
+                        &nbsp; Back to login</a>
                     <button id="proceedButton">Proceed</button>
                 </div>
             </div>
@@ -53,7 +57,7 @@
             </div>
         </div>
     </div>
-    
+
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -86,18 +90,36 @@
 
         updateCountdown();
 
-         const inputs = document.querySelectorAll('input[type="text"]');
+        const inputs = document.querySelectorAll('input[type="text"]');
         inputs.forEach((input, index) => {
             input.addEventListener('input', (e) => {
                 input.value = input.value.replace(/\D/g, '');
 
-                if (input.value.length === 1) {
+                if (input.value.length === 0) {
+                    if (index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                } else if (input.value.length === 1) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                }
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value.length === 0) {
+                    if (index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                } else if (e.key !== 'Backspace' && input.value.length === 1) {
                     if (index < inputs.length - 1) {
                         inputs[index + 1].focus();
                     }
                 }
             });
         });
+
+
 
         function areInputFieldsFilled() {
             var areFilled = true;
@@ -110,6 +132,10 @@
             return areFilled;
         }
 
+        $('input').on('change', function () {
+            $('.error-message').text('');
+        });
+
         $('#proceedButton').click(function () {
             if (areInputFieldsFilled()) {
                 window.location.href = 'dash.html';
@@ -120,4 +146,5 @@
         });
     });
 </script>
+
 </html>

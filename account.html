@@ -1,0 +1,278 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/account.css" />
+    <title>Account</title>
+  </head>
+
+  <body>
+    <div class="full-body">
+      <div class="side-nav">
+        <div>
+          <div class="logo">
+            <img src="./photos/Group 100000353.svg" alt="" />
+          </div>
+          <div class="icon">
+            <img src="./photos/Compiling1.svg" alt="" />
+          </div>
+        </div>
+        <div class="exit-icon">
+          <img src="./photos/arr011.svg" alt="" />
+        </div>
+      </div>
+      <div class="main-content body-contant">
+        <div class="top-contant">
+          <h1 class="main-text">Cross Border Remittance</h1>
+        </div>
+        <div class="navigation">
+          <a href="DashRemittance.html">Dashboard</a>
+          <a href="account.html" active>Accounts</a>
+          <a href="#">Payments</a>
+          <a href="#">Post-Export Documents</a>
+        </div>
+        
+        <div class="body-container">
+          <div class="transaction">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="account">
+                    <p class="main-text">Accounts</p>
+                </div>
+                <div class="padding">
+                <div class="header">
+                    <div class="firstbutoons">
+                        <button class="new-button b-1">Overseas</button>
+                        <button class="new-button b-2" onclick="window.location.href='settlement.html';">Settlement</button>
+                    </div>
+                    <button class="my-button" data-toggle="modal" data-target="#currencyModal">+ Add Currency</button>
+
+                    <div class="modal" id="currencyModal" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Add New Currency</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><ion-icon name="close"></ion-icon></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">    
+                                    <div class="modal-text">
+                                        <div class="logo">
+                                            <span>$</span>
+                                        </div>
+                                        <div class="text">
+                                        <p class="main-text">USD</p>
+                                        <span>(United States Dollar)</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-text">
+                                        <div class="logo">
+                                            <span>₩</span>
+                                        </div>
+                                        <div class="text">
+                                            <p class="main-text">KRW</p>
+                                            <span>(South Korean Won)</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-text">
+                                        <div class="logo">
+                                            <span>L£</span>
+                                        </div>
+                                        <div class="text">
+                                            <p class="main-text">LBP</p>
+                                            <span>(Lebanon Poundr)</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-text">
+                                        <div class="logo">
+                                            <span>E£</span>
+                                        </div>
+                                        <div class="text">
+                                            <p class="main-text">EGP</p>
+                                            <span>(Egypt Pound)</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-text">
+                                        <div class="logo">
+                                            <span>¥</span>
+                                        </div>
+                                        <div class="text">
+                                            <p class="main-text">CNY</p>
+                                            <span>(China Yuan Renminbi)</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-text">
+                                        <div class="logo">
+                                            <span>£</span>
+                                        </div>
+                                        <div class="text">
+                                            <p class="main-text">GBP</p>
+                                            <span>(United Kingdom Pound)</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-text">
+                                        <div class="logo">
+                                            <span>C$</span>
+                                        </div>
+                                        <div class="text">
+                                            <p class="main-text">CAD</p>
+                                            <span>(Canada Dollar)</span>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text">An Overseas Account is for collection in foreign currencies</p>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="Currency">
+                        <div class="th-text">
+                          <span class="primary-text">Currency</span
+                          ><ion-icon name="chevron-expand"></ion-icon>
+                        </div>
+                      </th>
+                      <th class="account-number">
+                        <div class="th-text">
+                          <span class="primary-text">Account Number</span
+                          ><ion-icon name="chevron-expand"></ion-icon>
+                        </div>
+                      </th>
+                      <th class="Currency">
+                        <div class="th-text">
+                          <span class="primary-text">Country</span
+                          ><ion-icon name="chevron-expand"></ion-icon>
+                        </div>
+                      </th>
+                      <th class="Currency">
+                        <div class="th-text">
+                          <span class="primary-text">Type</span>
+                        </div>
+                      </th>
+                      <th class="Currency">
+                        <div class="th-text">
+                          <span class="primary-text">Last Payment</span>
+                          <div>
+                            <ion-icon name="chevron-expand"></ion-icon>
+                            <ion-icon name="funnel"></ion-icon>
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+              <div class="col-md-3 side-image">
+                <div class="side">
+                  <img
+                    class="image"
+                    src="photos/empty.svg"
+                    alt=""
+                  />
+                </div>
+                <p class="main-text">Oops! It’s empty here like space</p>
+                <span
+                  >Select a transaction from the list in the left to view the
+                  details</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+    $(".my-button").click(function () {
+            $('#currencyModal').modal('show');
+        });
+    var dataArray = [
+      {
+        currency: "USD ( $ )",
+        accountNumber: "9528 9129 1662 7190",
+        country: "United State",
+        localOrGlobal: "Local",
+        date: "26 Jun ‘23",
+      },
+      {
+        currency: "EGP ( £ )",
+        accountNumber: "3362 8186 6973 8432",
+        country: "United Kingdom",
+        localOrGlobal: "Local",
+        date: "11 Jun ‘23",
+      },
+      {
+        currency: "KRW ( ₩ )",
+        accountNumber: "3754 6244 1396 6246",
+        country: "South Korea",
+        localOrGlobal: "Local",
+        date: "14 Jun ‘23",
+      },
+      {
+        currency: "USD ( $ )",
+        accountNumber: "6810 1788 6380 8833",
+        country: "United State",
+        localOrGlobal: "Global",
+        date: "18 Jun ‘23",
+      },
+      {
+        currency: "USD ( $ )",
+        accountNumber: "9957 7070 8048 8887",
+        country: "United State",
+        localOrGlobal: "Global",
+        date: "12 Jun ‘23",
+      },
+    ];
+
+    function populateTable(data) {
+      var tbody = $(".table tbody");
+
+      data.forEach(function (item) {
+        var row = "<tr>";
+        row += '<td class="Currency">' + item.currency + "</td>";
+        row += '<td class="account-number">' + item.accountNumber + "</td>";
+        row += '<td class="Currency">' + item.country + "</td>";
+        row += '<td class="Currency">' + item.localOrGlobal + "</td>";
+        row += '<td class="Currency">' + item.date + "</td>";
+        row += "</tr>";
+
+        tbody.append(row);
+      });
+    }
+
+    populateTable(dataArray);
+  </script>
+</html>

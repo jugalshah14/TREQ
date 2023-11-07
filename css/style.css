@@ -1,12 +1,15 @@
 @font-face {
   font-family: Satoshi;
-  src: url(../font/Satoshi-Regular.ttf);
-  font-weight: normal; }
+  src: url(../font/Satoshi-Regular.ttf); }
 
 @font-face {
-  font-family: Satoshi;
+  font-family: Satoshi-bold;
   src: url(../font/Satoshi-Bold.ttf);
   font-weight: bold; }
+
+@font-face {
+  font-family: Satoshi-medium;
+  src: url(../font/Satoshi-Medium.ttf); }
 
 @font-face {
   font-family: General Sans;
@@ -14,28 +17,30 @@
   font-weight: normal; }
 
 @font-face {
-  font-family: General Sans;
-  src: url(../font/GeneralSans-Semibold.ttf);
-  font-weight: bold; }
+  font-family: General Sans-semibold;
+  src: url(../font/GeneralSans-Semibold.ttf); }
 
 @font-face {
-  font-family: General Sans;
-  src: url(../font/GeneralSans-Bold.ttf);
-  font-weight: bolder; }
+  font-family: General Sans-bold;
+  src: url(../font/GeneralSans-Bold.ttf); }
 
 @font-face {
-  font-family: General Sans;
-  src: url(../font/GeneralSans-Medium.ttf);
-  font-weight: normal; }
+  font-family: General Sans-m;
+  src: url(../font/GeneralSans-Medium.ttf); }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Satoshi; }
+  * ::-webkit-scrollbar {
+    width: 5px; }
+  * ::-webkit-scrollbar-thumb {
+    background: #cdcccc;
+    border-radius: 10px; }
 
 .primary-text {
-  color: #7F8899;
+  color: #7f8899;
   font-family: General Sans;
   font-size: 12px;
   font-style: normal;
@@ -44,7 +49,7 @@
   text-transform: uppercase; }
 
 .main-text {
-  color: #1F2C35;
+  color: #1f2c35;
   font-family: General Sans;
   font-size: 16px;
   font-style: normal;
@@ -55,14 +60,14 @@ p {
   margin-bottom: 0; }
 
 span {
-  color: #7F8899;
+  color: #7f8899;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; }
 
 label {
-  color: #7F8899;
+  color: #7f8899;
   font-size: 12px; }
 
 input {
@@ -73,14 +78,31 @@ input {
   border: 1px solid rgba(127, 136, 153, 0.2);
   outline: none; }
   input:focus {
-    border-color: #E06A43; }
+    border-color: #e06a43; }
   input:active {
-    border-color: #E06A43; }
+    border-color: #e06a43; }
   input:invalid {
-    border-color: #E06A43; }
+    border-color: #e06a43; }
+
+input::placeholder {
+  color: #c0c0c0;
+  font-size: 14px;
+  font-family: Satoshi; }
+
+.input-container {
+  position: relative; }
+  .input-container input.calendar {
+    padding-right: 30px; }
+  .input-container ion-icon.calendar-icon {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    cursor: pointer; }
 
 a {
-  color: #E06A43;
+  color: #e06a43;
   text-decoration: none; }
 
 select {
@@ -91,11 +113,11 @@ select {
   border: 1px solid rgba(127, 136, 153, 0.2);
   outline: none; }
   select:focus {
-    border-color: #E06A43; }
+    border-color: #e06a43; }
   select:active {
-    border-color: #E06A43; }
+    border-color: #e06a43; }
   select:invalid {
-    border-color: #E06A43; }
+    border-color: #e06a43; }
   select option {
     padding: 20px; }
 
@@ -107,26 +129,27 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 6px;
-  background: #E06A43;
+  background: #e06a43;
   color: white;
   border: none;
   font-size: 14px; }
   button.primary-button {
-    background: #FDF8F6;
-    color: #E06A43; }
+    background: #fdf8f6;
+    color: #e06a43; }
 
 .modal .modal-header {
   border: none;
-  align-items: center; }
+  align-items: center;
+  border-radius: 0.75rem; }
   .modal .modal-header .modal-title {
-    color: #1F2C35;
+    color: #1f2c35;
     font-family: General Sans;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 32px; }
   .modal .modal-header .close {
-    background: #F9F8FE;
+    background: #f9f8fe;
     border-radius: 25px;
     padding: 0;
     height: 30px;
@@ -138,7 +161,7 @@ button {
         font-size: 20px; }
 
 .modal .modal-body span {
-  color: #1F2C35;
+  color: #1f2c35;
   font-weight: 500; }
 
 .modal .modal-footer {
@@ -147,20 +170,70 @@ button {
   .modal .modal-footer button {
     padding: 5px 10px; }
   .modal .modal-footer a {
-    color: #1F2C35;
+    color: #1f2c35;
     cursor: pointer;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500; }
 
 .side-nav {
-  background-color: #1E1E2D;
+  background-color: #1e1e2d;
   width: 100px;
   min-height: 100vh;
-  position: absolute;
+  height: 100%;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  transition: width 0.3s ease-in-out;
+  z-index: 999; }
+  .side-nav .menu-names {
+    display: none;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease; }
+    .side-nav .menu-names p {
+      margin: 0; }
+  .side-nav .menu-names2 {
+    display: none;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease; }
+    .side-nav .menu-names2 p {
+      margin: 0; }
+  .side-nav:hover {
+    width: 300px; }
+    .side-nav:hover .exit-icon {
+      display: block; }
+    .side-nav:hover .icon {
+      width: 100%;
+      transform: scale(1);
+      justify-content: start;
+      padding-left: 20px;
+      gap: 20px;
+      align-items: center; }
+    .side-nav:hover .logo {
+      justify-content: start;
+      padding-left: 20px; }
+    .side-nav:hover .menu-names {
+      display: block;
+      opacity: 1;
+      transform: translateX(0);
+      transition-delay: 0.4s;
+      transition: opacity 0.3s ease, transform 0.3s ease; }
+      .side-nav:hover .menu-names p {
+        color: #e06a43; }
+    .side-nav:hover .menu-names2 {
+      display: block;
+      opacity: 1;
+      transform: translateX(0);
+      transition-delay: 0.6s;
+      padding-left: 65px;
+      transition: opacity 0.3s ease, transform 0.3s ease; }
+      .side-nav:hover .menu-names2 p {
+        color: white;
+        margin-top: 20px;
+        cursor: pointer; }
   @media only screen and (max-width: 768px) {
     .side-nav {
       display: none; } }
@@ -169,22 +242,23 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #2D2D43; }
+    border-bottom: 1px solid #2d2d43; }
   .side-nav .icon {
     width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 40px; }
+    margin-top: 40px;
+    transition: width 0.3s ease, transform 0.3s ease; }
     .side-nav .icon img {
-      height: 30px;
+      height: 25px;
       cursor: pointer; }
   .side-nav .exit-icon {
     width: 100%;
-    display: flex;
-    justify-content: center; }
+    display: none;
+    margin-bottom: 100px;
+    text-align: end;
+    padding-right: 40px; }
     .side-nav .exit-icon img {
       height: 30px;
       cursor: pointer; }
@@ -192,10 +266,149 @@ button {
 .main-content {
   padding: 0 20px;
   margin-left: 100px;
-  width: 100vw; }
+  width: 100%; }
   @media only screen and (max-width: 768px) {
     .main-content {
       width: 100%;
       padding: 0 20px;
       margin-left: 0;
       margin-bottom: 100px; } }
+
+.select2-container--default
+.select2-selection--multiple
+.select2-selection__rendered {
+  display: flex !important;
+  align-items: center; }
+
+.select2-selection__choice {
+  background-color: #e06a43 !important;
+  color: white !important;
+  padding: 2px 10px !important;
+  display: flex !important;
+  gap: 10px;
+  border-radius: 15px !important;
+  border: none !important; }
+
+.select2-results__options {
+  padding: 0 10px !important; }
+
+.select2-selection__choice__remove {
+  color: white !important;
+  margin-right: 0 !important; }
+
+.select2-results__option {
+  padding: 10px !important;
+  color: black !important;
+  border-bottom: 1px solid #efefef !important; }
+
+.select2-container--default
+.select2-results__option--highlighted[aria-selected] {
+  color: #e06a43 !important;
+  background-color: white !important; }
+
+.select2-container--default .select2-results__option[aria-selected="true"] {
+  color: #e06a43 !important;
+  background-color: white !important; }
+
+.class-link {
+  color: #333333;
+  text-decoration: none; }
+
+.class-link:hover {
+  color: #ffbb00; }
+
+.ui-datepicker {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+
+.ui-datepicker-header {
+  color: #ffffff;
+  margin-bottom: 10px; }
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  width: 20px;
+  height: 20px;
+  text-indent: 9999px;
+  border-radius: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  margin-top: 12px; }
+
+.ui-datepicker-prev {
+  float: left;
+  margin-left: 12px; }
+
+.ui-datepicker-prev:after {
+  transform: rotate(45deg);
+  margin: -15px 0px 0px 8px; }
+
+.ui-datepicker-next {
+  float: right;
+  margin-right: 12px; }
+
+.ui-datepicker-next:after {
+  transform: rotate(-135deg);
+  margin: -15px 0px 0px 6px; }
+
+.ui-datepicker-prev:after,
+.ui-datepicker-next:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #e06a43;
+  border-bottom: 2px solid #e06a43; }
+
+.ui-datepicker-title {
+  text-align: center;
+  line-height: 40px; }
+
+.ui-datepicker-month {
+  color: black;
+  font-weight: bold; }
+
+.ui-datepicker-year {
+  color: black;
+  font-weight: bold; }
+
+.ui-datepicker-calendar {
+  width: 100%;
+  text-align: center; }
+
+.ui-datepicker-calendar thead tr th span {
+  display: block;
+  width: 38px;
+  color: black;
+  margin-bottom: 5px;
+  font-weight: bold; }
+
+.ui-state-default {
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  line-height: 30px;
+  font-size: 12px; }
+
+.ui-state-default:hover {
+  color: #ffffff;
+  background: #e06a43;
+  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
+  text-decoration: none; }
+
+.ui-state-highlight {
+  color: #ffffff;
+  background-color: #e06a43;
+  border-radius: 8px; }
+
+.ui-state-active {
+  color: #ffffff;
+  background-color: #e06a43;
+  border-radius: 8px; }
+
+.ui-datepicker-unselectable .ui-state-default {
+  color: #eee;
+  border: 2px solid transparent; }

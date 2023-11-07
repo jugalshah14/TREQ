@@ -1,0 +1,434 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/settlement.css" />
+    <title>Account-Settlement</title>
+  </head>
+
+  <body>
+    <div class="full-body">
+      <div class="side-nav">
+        <div>
+          <div class="logo">
+            <img src="./photos/Group 100000353.svg" alt="" />
+          </div>
+          <div class="icon">
+            <img src="./photos/Compiling1.svg" alt="" />
+          </div>
+        </div>
+        <div class="exit-icon">
+          <img src="./photos/arr011.svg" alt="" />
+        </div>
+      </div>
+      <div class="main-content body-contant">
+        <div class="top-contant">
+          <h1 class="main-text">Cross Border Remittance</h1>
+        </div>
+        <div class="navigation">
+          <a href="DashRemittance.html">Dashboard</a>
+          <a href="account.html" active>Accounts</a>
+          <a href="#">Payments</a>
+          <a href="#">Post-Export Documents</a>
+        </div>
+
+        <div class="body-container">
+          <div class="transaction">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="account">
+                  <p class="main-text">Accounts</p>
+                </div>
+                <div class="padding">
+                  <div class="header">
+                    <div class="firstbutoons">
+                      <button
+                        class="new-button b-1"
+                        onclick="window.location.href='account.html';"
+                      >
+                        Overseas
+                      </button>
+                      <button class="new-button b-2">Settlement</button>
+                    </div>
+                    <button
+                      class="my-button"
+                      data-toggle="modal"
+                      data-target=".checkModal"
+                    >
+                      + Add Bank Account
+                    </button>
+
+                    <div
+                      class="modal right fade checkModal"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="myModalLabel2"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Bank Account</h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true"
+                                ><ion-icon name="close"></ion-icon
+                              ></span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="justify">
+                              <div class="card">
+                                <img src="./photos/Frame3.svg" alt="" />
+                                <p class="main-text" id="file-name-text">
+                                  Upload Your Cheque
+                                </p>
+                                <span
+                                  >in PDF/JPG/PNG, Max Allowable Size 2MB.</span
+                                >
+                                <div class="buttons">
+                                  <button class="primary-button">
+                                    Click a Pic
+                                  </button>
+                                  <button id="file-upload-button">
+                                    Upload
+                                  </button>
+                                  <input
+                                    type="file"
+                                    id="file-input"
+                                    accept=".pdf, .jpg, .png"
+                                    style="display: none"
+                                  />
+                                </div>
+                              </div>
+                              <span
+                                id="errorMessage"
+                                style="color: #e06a43"
+                              ></span>
+                              <div class="load">
+                                <div
+                                  class="loading"
+                                  style="display: none"
+                                ></div>
+                              </div>
+                              <div class="or">
+                                <hr />
+                                or
+                                <hr />
+                              </div>
+                              <button class="new-button" id="showManually">
+                                Enter Account Detail Manually
+                              </button>
+                            </div>
+                            <div class="manually" style="display: none">
+                              <button class="new-button" id="showJustify">
+                                Upload a Cheque
+                              </button>
+                              <div class="form">
+                                <div>
+                                  <label>Account Holder Name*</label>
+                                  <input
+                                    id="account-holder-name"
+                                    type="text"
+                                    placeholder="Enter Account Holder Name"
+                                  />
+                                  <span
+                                    id="errorMessage1"
+                                    style="color: #e06a43"
+                                  ></span>
+                                </div>
+                                <div>
+                                  <label>Bank Name*</label>
+                                  <input
+                                    id="bank-name"
+                                    type="text"
+                                    placeholder="Enter Bank Name"
+                                  />
+                                  <span
+                                    id="errorMessage2"
+                                    style="color: #e06a43"
+                                  ></span>
+                                </div>
+                                <div>
+                                  <label>Account Number*</label>
+                                  <input
+                                    id="account-number"
+                                    type="number"
+                                    placeholder="Enter Account Number"
+                                  />
+                                  <span
+                                    id="errorMessage3"
+                                    style="color: #e06a43"
+                                  ></span>
+                                </div>
+                                <div>
+                                  <label>IFSC Code*</label>
+                                  <input
+                                    type="text"
+                                    id="iFSC-code"
+                                    placeholder="Enter IFSC Code"
+                                  />
+                                  <span
+                                    id="errorMessage4"
+                                    style="color: #e06a43"
+                                  ></span>
+                                </div>
+                              </div>
+                              <div class="text-container">
+                                <img
+                                  alt=""
+                                  src="./photos/Group 1000003685.svg"
+                                />
+                                <span
+                                  >We'll credit ₹1.00 in your account to
+                                  verify</span
+                                >
+                              </div>
+                              <hr />
+                              <div class="btns">
+                                <button class="submit">Verify & Submit</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text">
+                    A Settlement Account is for withdrawal in domestic currency
+                  </p>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="name">
+                          <div class="th-text">
+                            <span class="primary-text">Bank Name</span
+                            ><ion-icon name="chevron-expand"></ion-icon>
+                          </div>
+                        </th>
+                        <th class="name">
+                          <div class="th-text">
+                            <span class="primary-text">Account Number</span
+                            ><ion-icon name="chevron-expand"></ion-icon>
+                          </div>
+                        </th>
+                        <th class="number">
+                          <div class="th-text">
+                            <span class="primary-text">IFSC Code</span
+                            ><ion-icon name="chevron-expand"></ion-icon>
+                          </div>
+                        </th>
+                        <th class="number">
+                          <div class="th-text">
+                            <span class="primary-text">Added On</span>
+                            <div>
+                              <ion-icon name="chevron-expand"></ion-icon>
+                              <ion-icon name="funnel"></ion-icon>
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-3 side-image">
+                <div class="side">
+                  <img
+                    class="image"
+                    src="photos/empty.svg"
+                    alt=""
+                  />
+                </div>
+                <p class="main-text">Oops! It’s empty here like space</p>
+                <span
+                  >Select a account from the list in the left to view the
+                  details</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(".submit").click(function () {
+      var accountHolderName = $("#account-holder-name").val();
+      var bankName = $("#bank-name").val();
+      var accountNumber = $("#account-number").val();
+      var iFSCCode = $("#iFSC-code").val();
+
+      if (accountHolderName === "") {
+        $("#errorMessage1").text("Account Holder Name is required");
+      } else {
+        $("#errorMessage1").text("");
+      }
+
+      if (bankName === "") {
+        $("#errorMessage2").text("Bank Name is required");
+      } else {
+        $("#errorMessage2").text("");
+      }
+
+      if (accountNumber === "") {
+        $("#errorMessage3").text("Account Number is required");
+      } else {
+        $("#errorMessage3").text("");
+      }
+
+      if (iFSCCode === "") {
+        $("#errorMessage4").text("IFSC Code is required");
+      } else {
+        $("#errorMessage4").text("");
+      }
+    });
+
+    $(document).ready(function () {
+      $("#file-upload-button").click(function () {
+        $("#file-input").click();
+      });
+
+      $("#file-input").change(function () {
+        const fileInput = this;
+        if (fileInput.files.length > 0) {
+          $(".loading").show();
+
+          const selectedFile = fileInput.files[0];
+          const maxSizeKB = 200;
+
+          if (selectedFile.size <= maxSizeKB * 1024) {
+            const allowedTypes = [".pdf", ".jpg", ".png"];
+            const fileType =
+              "." + selectedFile.name.split(".").pop().toLowerCase();
+
+            if (allowedTypes.includes(fileType)) {
+              setTimeout(function () {
+                $("#file-name-text").text(selectedFile.name);
+
+                $(".loading").hide();
+                $("#errorMessage").hide();
+              }, 2000);
+            } else {
+              $("#errorMessage").text(
+                "Only PDF, JPG, or PNG files are allowed."
+              );
+              fileInput.value = "";
+
+              $(".loading").hide();
+            }
+          } else {
+            $("#errorMessage").text(
+              "File size exceeds the maximum allowable size (200KB)."
+            );
+            fileInput.value = "";
+
+            $(".loading").hide();
+          }
+        }
+      });
+    });
+
+    $(".my-button").click(function () {
+      $(".checkModal").modal("show");
+    });
+
+    $(document).ready(function () {
+      $("#showManually").click(function () {
+        $(".justify").hide();
+        $(".manually").show();
+        $("#showJustify").show();
+        $(this).hide();
+      });
+
+      $("#showJustify").click(function () {
+        $(".manually").hide();
+        $(".justify").show();
+        $("#showManually").show();
+        $(this).hide();
+      });
+    });
+
+    var dataArray = [
+      {
+        bankName: "Ondricka - Schoen",
+        accountNumber: "7470 9056 8181 2868",
+        ifscCode: "ABCD6607",
+        date: "13 Jun ‘23",
+      },
+      {
+        bankName: "Ferry and Sons",
+        accountNumber: "7599 3872 9686 8130",
+        ifscCode: "QRST5666",
+        date: "06 Jun '23",
+      },
+      {
+        bankName: "Tromp, Bartell and Schuppe",
+        accountNumber: "9625 2267 3346 5004",
+        ifscCode: "EFGH8935",
+        date: "19 Jun ‘23",
+      },
+      {
+        bankName: "Rutherford, Cassin and Rosenbaum",
+        accountNumber: "3965 7596 1328 3702",
+        ifscCode: "UVWX6617",
+        date: "23 Jun ‘23",
+      },
+      {
+        bankName: "Carter, Ruecker and Schmidt",
+        accountNumber: "9572 2098 3842 1552",
+        ifscCode: "QRST3103",
+        date: "02 Jun ‘23",
+      },
+    ];
+
+    function populateTable(data) {
+      var tbody = $(".table tbody");
+
+      data.forEach(function (item) {
+        var row = "<tr>";
+        row += '<td class="name">' + item.bankName + "</td>";
+        row += '<td class="name">' + item.accountNumber + "</td>";
+        row += '<td class="number">' + item.ifscCode + "</td>";
+        row += '<td class="number">' + item.date + "</td>";
+        row += "</tr>";
+
+        tbody.append(row);
+      });
+    }
+
+    populateTable(dataArray);
+  </script>
+</html>

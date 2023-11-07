@@ -75,35 +75,44 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-        var savedEmail = localStorage.getItem('email');
+            var savedEmail = localStorage.getItem('email');
 
-        if (savedEmail) {
-            var EmailText = $('#EmailText');
-            EmailText.html(savedEmail);
-        }
-
-         $(".proceed").click(function () {
-            var businessType = $("#business-type").val();
-            var businessName = $(".mobile input").val();
-            var errorMessage1 = $("#errorMessage1");
-            var errorMessage2 = $("#errorMessage2");
-
-            errorMessage1.text('');
-            errorMessage2.text('');
-
-            if (businessType === '') {
-                errorMessage1.text('Please select a Business Type.');
-                return false;
+            if (savedEmail) {
+                var EmailText = $('#EmailText');
+                EmailText.html(savedEmail);
             }
 
-            if (businessName.trim() === '') {
-                errorMessage2.text('Please enter your business name as per PAN.');
-                return false;
-            }
+            $(".proceed").click(function () {
+                var businessType = $("#business-type").val();
+                var businessName = $(".mobile input").val();
+                var errorMessage1 = $("#errorMessage1");
+                var errorMessage2 = $("#errorMessage2");
 
-            window.location.href = 'dash.html';
+                errorMessage1.text('');
+                errorMessage2.text('');
+
+                if (businessType === '') {
+                    errorMessage1.text('Please select a Business Type.');
+                    return false;
+                }
+
+                if (businessName.trim() === '') {
+                    errorMessage2.text('Please enter your business name as per PAN.');
+                    return false;
+                }
+
+                window.location.href = 'dash.html';
+            });
+
+            $("#business-type").on('change', function () {
+                $("#errorMessage1").text('');
+            });
+
+            $(".mobile input").on('input', function () {
+                $("#errorMessage2").text('');
+            });
         });
-    });
+
 </script>
 
 </html>

@@ -146,7 +146,7 @@
                 .progress-fill {
                     position: absolute;
                     height: 4px;
-                    width: 50%;
+                    width: 0%;
                     background: linear-gradient(270deg, #E06A43 10.34%, #EFC5B8 102.72%);
                     border-radius: 15px;
                 }
@@ -352,25 +352,9 @@
                 select {
                     height: auto;
                     outline: none;
-                    
+
                 }
             }
-
-            .select2-selection__choice {
-                background-color: #E06A43;
-                color: white;
-                padding: 5px;
-            }
-
-            .select2-selection__choice__remove {
-                color: white;
-            }
-
-            .select2-results__option {
-                padding: 10px;
-            }
-
-
 
             .card-main {
                 justify-content: space-between;

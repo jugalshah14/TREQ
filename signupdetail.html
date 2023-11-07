@@ -69,13 +69,14 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function () {
+   $(document).ready(function () {
         var savedEmail = localStorage.getItem('email');
 
         if (savedEmail) {
             var EmailText = $('#EmailText');
             EmailText.html(savedEmail);
         }
+
         $('#proceedButton').on('click', function () {
             var firstName = $('#firstName').val();
             var lastName = $('#lastName').val();
@@ -96,14 +97,26 @@
             if (mobile.trim() === '') {
                 $('#errorMessage3').text('Mobile is required');
             }
+
             if (firstName.trim() !== '' && lastName.trim() !== '' && mobile.trim() !== '') {
                 window.location.href = 'details.html';
             }
         });
+
+        $('#firstName').on('input', function () {
+            $('#errorMessage1').text(''); 
+        });
+
+        $('#lastName').on('input', function () {
+            $('#errorMessage2').text('');
+        });
+
         $('#mobile').on('input', function () {
+            $('#errorMessage3').text('');
             this.value = this.value.replace(/\D/g, '');
         });
     });
+
 </script>
 
 </html>

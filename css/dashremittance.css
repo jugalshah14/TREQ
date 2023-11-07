@@ -1,3 +1,8 @@
+.main-content {
+  margin-left: 0;
+  padding-left: 100px;
+  padding-right: 0; }
+
 .top-contant {
   display: flex;
   width: 100%;
@@ -17,21 +22,21 @@
 .navigation {
   width: 100%;
   height: 30px;
-  border-bottom: 2px solid #EFEFEF;
+  border-bottom: 2px solid #efefef;
   display: flex;
   flex-direction: row;
   padding: 0 36px;
   margin-top: 1.25rem;
   gap: 50px; }
   .navigation a {
-    color: #9D9FAC;
+    color: #9d9fac;
     text-decoration: none;
     font-size: 14px; }
     .navigation a:hover {
       color: #000; }
     .navigation a:active {
       color: #000;
-      border-bottom: 2px solid #E06A43; }
+      border-bottom: 2px solid #e06a43; }
 
 .body-container {
   width: 100%;
@@ -46,24 +51,19 @@
     .body-container .recent span {
       font-family: General Sans;
       font-size: 12px;
-      color: #7F8899;
+      color: #7f8899;
       font-weight: bold; }
     .body-container .recent hr {
       width: 20px;
       margin-bottom: 0;
       margin-top: 0;
-      border-top: 2px solid #EFEFEF; }
+      border-top: 2px solid #efefef; }
   .body-container .card-container {
     height: 350px;
     display: flex;
     flex-direction: column;
     padding: 0 10px;
     overflow: auto; }
-    .body-container .card-container::-webkit-scrollbar {
-      width: 4px; }
-    .body-container .card-container::-webkit-scrollbar-thumb {
-      background: #cdcccc;
-      border-radius: 10px; }
     .body-container .card-container .card {
       display: flex;
       justify-content: space-between;
@@ -72,7 +72,7 @@
       flex-direction: row;
       border: none;
       border-radius: 0px;
-      border-bottom: 1px solid #b4b6b9;
+      border-bottom: 1px solid #efefef;
       min-height: 90px; }
       .body-container .card-container .card .img-text {
         display: flex;
@@ -80,19 +80,19 @@
         gap: 10px; }
         .body-container .card-container .card .img-text .image {
           display: flex;
-          background-color: #E06A431A;
+          background-color: #e06a431a;
           width: 42px;
           height: 42px;
           border-radius: 25px;
           justify-content: center;
           align-items: center; }
           .body-container .card-container .card .img-text .image ion-icon {
-            color: #E06A43;
+            color: #e06a43;
             height: 19px;
             width: 19px; }
         .body-container .card-container .card .img-text .image1 {
           display: flex;
-          background-color: #00A25B1A;
+          background-color: #00a25b1a;
           width: 42px;
           height: 42px;
           border-radius: 25px;
@@ -104,7 +104,7 @@
             width: 19px; }
         .body-container .card-container .card .img-text .image2 {
           display: flex;
-          background-color: #E06A431A;
+          background-color: #e06a431a;
           width: 42px;
           height: 42px;
           border-radius: 25px;
@@ -139,7 +139,7 @@
     .body-container .otherside-container .country-card .slick-slide {
       height: auto; }
     .body-container .otherside-container .country-card .slick-dots li.slick-active button:before {
-      color: #E06A43; }
+      color: #e06a43; }
     .body-container .otherside-container .country-card .card {
       padding: 20px;
       border-radius: 8px;
@@ -183,7 +183,7 @@
             font-weight: bold; }
         .body-container .otherside-container .country-card .card .card-body .last-text h6 {
           margin-bottom: 0;
-          color: #E06A43;
+          color: #e06a43;
           font-size: 12.8px; }
   .body-container .otherside-container .indian {
     margin-top: 30px; }
@@ -195,7 +195,7 @@
     .body-container .otherside-container .indian .slick-slide {
       height: auto; }
     .body-container .otherside-container .indian .slick-dots li.slick-active button:before {
-      color: #E06A43; }
+      color: #e06a43; }
     .body-container .otherside-container .indian .card {
       padding: 20px;
       border-radius: 8px;
@@ -251,15 +251,21 @@
         justify-content: center;
         align-items: center; }
         .body-container .quick-link .card .arrow ion-icon {
-          color: #E06A43; }
+          color: #e06a43; }
   .body-container .transaction {
     margin-top: 40px; }
     .body-container .transaction .table {
-      width: 100%; }
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px; }
+      .body-container .transaction .table tbody tr {
+        padding: 0.5rem; }
+        .body-container .transaction .table tbody tr:hover {
+          background-color: #fdf8f6;
+          cursor: pointer; }
       .body-container .transaction .table tr {
         display: flex;
         flex-direction: row;
-        width: 100%; }
+        width: 100%;
+        border-bottom: 1px solid #efefef; }
         .body-container .transaction .table tr .payer {
           width: 12%; }
         .body-container .transaction .table tr .status {
@@ -268,7 +274,8 @@
           width: 22%; }
         .body-container .transaction .table tr th {
           padding: 20px 0;
-          border-top: none; }
+          border-top: none;
+          border-bottom: none; }
           .body-container .transaction .table tr th .th-text {
             padding: 0 10px;
             display: flex;
@@ -277,20 +284,20 @@
             border-right: 2px solid #e1e2e2; }
           .body-container .transaction .table tr th ion-icon {
             cursor: pointer;
-            color: #7F8899; }
+            color: #7f8899; }
         .body-container .transaction .table tr td {
           padding: 20px 20px;
           border-top: none;
-          border-bottom: 1px solid #e1e2e2;
           font-size: 14px;
-          color: #1f2c35; }
+          color: #1f2c35;
+          font-family: Satoshi-medium; }
     .body-container .transaction .side-image {
-      text-align: center;
-      height: 500px; }
+      text-align: center; }
       .body-container .transaction .side-image .side {
         display: flex;
         justify-content: center;
         align-items: center; }
       .body-container .transaction .side-image .image {
-        height: 200px;
-        width: 200px; }
+        height: 300px; }
+      .body-container .transaction .side-image .main-text {
+        font-family: Satoshi-medium; }

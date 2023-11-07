@@ -1,0 +1,240 @@
+
+.main-content {
+    margin-left: 0;
+    padding-left: 100px;
+    padding-right: 0;
+}
+
+.top-contant {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    padding-top: 24px;
+    padding-left: 36px;
+    padding-right: 36px;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    .main-text {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: bold;
+    }
+}
+
+.navigation {
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #EFEFEF;
+    display: flex;
+    flex-direction: row;
+    padding: 0 36px;
+    margin-top: 1.25rem;
+    gap: 50px;
+
+    a {
+        color: #9D9FAC;
+        text-decoration: none;
+        font-size: 14px;
+
+        &:hover {
+            color: #000;
+        }
+
+        &:active {
+            color: #000;
+            border-bottom: 2px solid #E06A43;
+        }
+    }
+}
+
+.modal{
+    .modal-body{
+        padding: 20px 30px;
+
+        .modal-text{
+            padding: 0.5rem;
+            display: flex;
+            gap: 20px;
+            border-bottom: 1px solid #EFEFEF;
+            cursor: pointer;
+
+            &:hover{
+                background-color:#FDF8F6 ;
+            }
+
+            .logo{
+                height: 50px;
+                background-color: #FDF8F6;
+                border-radius: 25px;
+                width: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                span{
+                    color: #E06A43;
+                    font-size: 20px;
+                    font-family: Satoshi-medium;
+                }
+            }
+            .text{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 0;
+
+                .main-text{
+                    font-family: Satoshi-medium;
+                }
+
+                span{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .modal-footer{
+        justify-content: end;
+    }
+}
+
+.body-container {
+    width: 100%;
+         .transaction {
+
+            .row{
+                margin-right: 0;
+            }
+
+            .text{
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+
+             .col-md-9{
+                border-right: 2px solid #EFEFEF;
+                padding-right: 0;
+
+                .padding{
+                    padding: 0 36px;
+                }
+
+                .account {
+                        background-color: #FDF8F6;
+                        border-bottom: 2px solid #EFEFEF;
+                
+                
+                        .main-text {
+                            font-family: General Sans-semibold;
+                            font-size: 18px;
+                            padding: 20px 36px;
+                        }
+                    }
+
+                .header{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+
+                    .firstbutoons{
+                        display: flex;
+                        gap: 10px;
+                        background-color: #9D9FAC0D;
+                        border-radius: .375rem;
+                        padding: 0.25rem;
+
+                        .new-button{
+                            background-color: transparent;
+                            color: black;
+                        }
+                        .b-1{
+                            color: #E06A43;
+                            border: 1px solid #E06A43;
+                        }
+                    }
+                }
+             }
+    
+             .table {
+                 box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    
+                 tbody {
+    
+                     tr {
+                         padding: 0.5rem;
+    
+                         &:hover {
+                             background-color: #FDF8F6;
+                             cursor: pointer;
+                         }
+                     }
+                 }
+    
+                 tr {
+                     display: flex;
+                     flex-direction: row;
+                     width: 100%;
+                     border-bottom: 1px solid #EFEFEF;
+    
+                     .Currency {
+                         width: 18%;
+                     }
+    
+                     .account-number {
+                         width: 28%;
+                     }
+    
+                     th {
+                         padding: 20px 0;
+                         border-top: none;
+                         border-bottom: none;
+    
+                         .th-text {
+                             padding: 0 10px;
+                             padding-left: 20px;
+                             display: flex;
+                             justify-content: space-between;
+                             align-items: center;
+                             border-right: 2px solid #e1e2e2;
+                         }
+    
+                         ion-icon {
+                             cursor: pointer;
+                             color: #7F8899;
+                         }
+                     }
+    
+                     td {
+                         padding: 20px 20px;
+                         border-top: none;
+                         font-size: 14px;
+                         color: #1f2c35;
+                         font-family: Satoshi-medium;
+                     }
+                 }
+             }
+    
+             .side-image {
+                 text-align: center;
+    
+                 .side {
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                 }
+    
+                 .image {
+                     height: 300px;    
+                 }
+                 .main-text{
+                   font-family: Satoshi-medium ; 
+                 }
+             }
+         }
+}

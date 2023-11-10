@@ -19,25 +19,6 @@
     line-height: 1.75rem;
     font-weight: bold; }
 
-.navigation {
-  width: 100%;
-  height: 30px;
-  border-bottom: 2px solid #efefef;
-  display: flex;
-  flex-direction: row;
-  padding: 0 36px;
-  margin-top: 1.25rem;
-  gap: 50px; }
-  .navigation a {
-    color: #9d9fac;
-    text-decoration: none;
-    font-size: 14px; }
-    .navigation a:hover {
-      color: #000; }
-    .navigation a:active {
-      color: #000;
-      border-bottom: 2px solid #e06a43; }
-
 .body-container {
   width: 100%;
   margin-top: 30px;
@@ -222,6 +203,21 @@
         margin-top: 15px; }
   .body-container .quick-link {
     margin-top: 30px; }
+    .body-container .quick-link .vertical-line {
+      border-left: 2px solid #00A25B;
+      height: 50%;
+      position: absolute;
+      left: -1; }
+    .body-container .quick-link .vertical-line2 {
+      border-left: 2px solid #9075E1;
+      height: 50%;
+      position: absolute;
+      left: -1; }
+    .body-container .quick-link .vertical-line3 {
+      border-left: 2px solid #e06a43;
+      height: 50%;
+      position: absolute;
+      left: -1; }
     .body-container .quick-link .card {
       padding: 20px;
       border-radius: 8px;

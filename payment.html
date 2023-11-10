@@ -1,0 +1,611 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/payment.css" />
+    <title>Payments</title>
+  </head>
+
+  <body>
+    <div class="full-body">
+      <div class="side-nav">
+        <div>
+          <div class="logo">
+            <img src="./photos/Group 100000353.svg" alt="" />
+          </div>
+          <div class="icon">
+            <img src="./photos/Compiling1.svg" alt="" />
+          </div>
+        </div>
+        <div class="exit-icon">
+          <img src="./photos/arr011.svg" alt="" />
+        </div>
+      </div>
+      <div class="main-content body-contant">
+        <div class="top-contant">
+          <h1 class="main-text">Cross Border Remittance</h1>
+        </div>
+        <div class="navigation">
+          <a href="DashRemittance.html">Dashboard</a>
+          <a href="account.html" >Accounts</a>
+          <a active>Payments</a>
+          <a href="post.html">Post-Export Documents</a>
+        </div>
+
+        <div class="body-container">
+          <div class="transaction">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="account">
+                  <p class="main-text">Payments</p>
+                </div>
+                <div class="payes">
+                  <div class="header">
+                    <div class="payee">
+                      <span>PAYERS</span>
+                      <hr />
+                    </div>
+                    <button
+                      class="my-button"
+                      data-toggle="modal"
+                      data-target=".checkModal"
+                    >
+                      + Add Payer
+                    </button>
+                    <div
+                      class="modal right fade checkModal"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="myModalLabel2"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Add a New Payer</h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true"
+                                ><ion-icon name="close"></ion-icon
+                              ></span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="accordion" id="accordionExample">
+                              <div class="card">
+                                <div class="card-header" id="headingOne">
+                                  <h2 class="mb-0">
+                                    <span
+                                      class="btn-block text-left"
+                                      data-toggle="collapse"
+                                      data-target="#collapseOne"
+                                      aria-expanded="true"
+                                      aria-controls="collapseOne"
+                                    >
+                                      Payer Type<ion-icon
+                                        name="chevron-down-outline"
+                                      ></ion-icon>
+                                    </span>
+                                  </h2>
+                                </div>
+
+                                <div
+                                  id="collapseOne"
+                                  class="collapse show"
+                                  aria-labelledby="headingOne"
+                                  data-parent="#accordionExample"
+                                >
+                                  <div class="card-body">
+                                    <span
+                                      >Select the type of payer to classify and
+                                      fins them easily</span
+                                    >
+                                    <div class="radio-buttons">
+                                      <label class="radio-button">
+                                        <input
+                                          type="radio"
+                                          name="option"
+                                          value="option1"
+                                          checked="checked"
+                                        />
+                                        <div class="radio-circle"></div>
+                                        <span class="radio-label">Company</span>
+                                      </label>
+                                      <label class="radio-button">
+                                        <input
+                                          type="radio"
+                                          name="option"
+                                          value="option2"
+                                        />
+                                        <div class="radio-circle"></div>
+                                        <span class="radio-label"
+                                          >Individual</span
+                                        >
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <div class="card-header" id="headingOne">
+                                  <h2 class="mb-0">
+                                    <span
+                                      class="btn-block text-left"
+                                      data-toggle="collapse"
+                                      data-target="#collapseOne"
+                                      aria-expanded="true"
+                                      aria-controls="collapseOne"
+                                    >
+                                      Payer Details<ion-icon
+                                        name="chevron-down-outline"
+                                      ></ion-icon>
+                                    </span>
+                                  </h2>
+                                </div>
+
+                                <div
+                                  id="collapseOne"
+                                  class="collapse"
+                                  aria-labelledby="headingOne"
+                                  data-parent="#accordionExample"
+                                >
+                                  <div class="card-body">
+                                    <span
+                                      >Fill in your payers details required to
+                                      send and receive funds</span
+                                    >
+                                    <form>
+                                      <div>
+                                        <label>First Name*</label>
+                                        <input
+                                          type="text"
+                                          placeholder="Enter First Name"
+                                          value="Ashlee"
+                                        />
+                                      </div>
+                                      <div>
+                                        <label>Last Name*</label>
+                                        <input
+                                          type="text"
+                                          placeholder="Enter Last Name"
+                                          value="Kebbler"
+                                        />
+                                      </div>
+                                      <div>
+                                        <label>Email</label>
+                                        <input
+                                          type="text"
+                                          placeholder="Enter Email"
+                                          value="Ashtyn.Corkery@hotmail.com"
+                                        />
+                                      </div>
+                                      <div>
+                                        <label>Contact Number*</label>
+                                        <input
+                                          type="number"
+                                          placeholder="Enter Payers Contact Number"
+                                        />
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-bottam">
+                              <h6 data-dismiss="modal">Back</h6>
+                              <button>Add Payer</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="payes-body">
+                    <div class="cards">
+                      <div class="card">
+                        <div class="top">
+                          <h6>BB</h6>
+                        </div>
+                        <div class="card-body">
+                          <p class="main-text">Bernita Beier</p>
+                          <span>Renner, Gerhold and Lind</span>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="top2">
+                          <h6>EB</h6>
+                        </div>
+                        <div class="card-body">
+                          <p class="main-text">Emelia Bartell</p>
+                          <span>Ortiz - Ritchie</span>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="top">
+                          <h6>EK</h6>
+                        </div>
+                        <div class="card-body">
+                          <p class="main-text">Elmore Konopelski</p>
+                          <span>Turcotte - Leannon</span>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="top2">
+                          <h6>PL</h6>
+                        </div>
+                        <div class="card-body">
+                          <p class="main-text">Phyllis Larson</p>
+                          <span>Considine - Marquardt</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="view">
+                      <div class="viewall">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                      </div>
+                      <p>View All</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="padding">
+                  <div class="pay">
+                    <span>PAYMENTS</span>
+                    <hr />
+                  </div>
+                  <div class="header">
+                    <div class="firstbutoons">
+                      <button
+                        id="transactionButton"
+                        class="new-button transaction"
+                      >
+                        Transaction
+                      </button>
+                      <button id="requestButton" class="new-button request">
+                        Payment Request
+                      </button>
+                    </div>
+                    <button onclick="window.location.href='request.html';" >Request Payment</button>
+                  </div>
+                  <div id="table-container1"></div>
+                  <div id="table-container2" style="display: none"></div>
+                </div>
+              </div>
+              <div class="col-md-3 side-image">
+                <div class="side">
+                  <img class="image" src="photos/empty.svg" alt="" />
+                </div>
+                <p class="main-text">Oops! It’s empty here like space</p>
+                <span
+                  >Select a account from the list in the left to view the
+                  details</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(".submit").click(function () {
+      var accountHolderName = $("#account-holder-name").val();
+      var bankName = $("#bank-name").val();
+      var accountNumber = $("#account-number").val();
+      var iFSCCode = $("#iFSC-code").val();
+
+      if (accountHolderName === "") {
+        $("#errorMessage1").text("Account Holder Name is required");
+      } else {
+        $("#errorMessage1").text("");
+      }
+
+      if (bankName === "") {
+        $("#errorMessage2").text("Bank Name is required");
+      } else {
+        $("#errorMessage2").text("");
+      }
+
+      if (accountNumber === "") {
+        $("#errorMessage3").text("Account Number is required");
+      } else {
+        $("#errorMessage3").text("");
+      }
+
+      if (iFSCCode === "") {
+        $("#errorMessage4").text("IFSC Code is required");
+      } else {
+        $("#errorMessage4").text("");
+      }
+    });
+
+    $(document).ready(function () {
+      $("#file-upload-button").click(function () {
+        $("#file-input").click();
+      });
+
+      $("#file-input").change(function () {
+        const fileInput = this;
+        if (fileInput.files.length > 0) {
+          $(".loading").show();
+
+          const selectedFile = fileInput.files[0];
+          const maxSizeKB = 200;
+
+          if (selectedFile.size <= maxSizeKB * 1024) {
+            const allowedTypes = [".pdf", ".jpg", ".png"];
+            const fileType =
+              "." + selectedFile.name.split(".").pop().toLowerCase();
+
+            if (allowedTypes.includes(fileType)) {
+              setTimeout(function () {
+                $("#file-name-text").text(selectedFile.name);
+
+                $(".loading").hide();
+                $("#errorMessage").hide();
+              }, 2000);
+            } else {
+              $("#errorMessage").text(
+                "Only PDF, JPG, or PNG files are allowed."
+              );
+              fileInput.value = "";
+
+              $(".loading").hide();
+            }
+          } else {
+            $("#errorMessage").text(
+              "File size exceeds the maximum allowable size (200KB)."
+            );
+            fileInput.value = "";
+
+            $(".loading").hide();
+          }
+        }
+      });
+    });
+
+    $(".my-button").click(function () {
+      $(".checkModal").modal("show");
+    });
+
+    $(document).ready(function () {
+      $("#showManually").click(function () {
+        $(".justify").hide();
+        $(".manually").show();
+        $("#showJustify").show();
+        $(this).hide();
+      });
+
+      $("#showJustify").click(function () {
+        $(".manually").hide();
+        $(".justify").show();
+        $("#showManually").show();
+        $(this).hide();
+      });
+    });
+
+    $(document).ready(function () {
+      const transactionArray = {
+        columns: [
+          {
+            payer: "Payer",
+            urn: "URN",
+            amount: "Amount",
+            currency: "Currency",
+            status: "Status",
+            date: "Date",
+          },
+        ],
+        rows: [
+          {
+            payer: "John",
+            urn: "6448243729",
+            amount: 23432,
+            currency: "USD ( $ )",
+            status: "Credited - Initiated",
+            date: "21/06/2023 - 05:52",
+          },
+          {
+            payer: "Alice",
+            urn: "1253043793",
+            amount: 6344,
+            currency: "EGP ( £ )",
+            status: "Withdrawn - Failed",
+            date: "16/06/2023 - 12:13",
+          },
+          {
+            payer: "Maryse",
+            urn: "6156627232",
+            amount: 43343,
+            currency: "INR ( ₹ )",
+            status: "Transfer - Completed",
+            date: "10/06/2023 - 01:07",
+          },
+          {
+            payer: "Zoey",
+            urn: "2990072593",
+            amount: 67421,
+            currency: "INR ( ₹ )",
+            status: "Credited - Initiated",
+            date: "02/06/2023 - 08:41",
+          },
+          {
+            payer: "Skylar",
+            urn: "3385747710",
+            amount: 478035,
+            currency: "EGP ( £ )",
+            status: "Transfer - Completed",
+            date: "02/06/2023 - 01:14",
+          },
+        ],
+      };
+
+      function createTable(data) {
+        const tableContainer = $("#table-container1");
+        const table = $("<table>").addClass("transaction-table");
+
+        const thead = $("<thead>").appendTo(table);
+
+        data.columns.forEach((row) => {
+          const headerElement = $("<tr>").appendTo(thead);
+          Object.values(row).forEach((value) => {
+            $("<td>").text(value).appendTo(headerElement);
+          });
+        });
+
+        const tbody = $("<tbody>").appendTo(table);
+        data.rows.forEach((row) => {
+          const rowElement = $("<tr>").appendTo(tbody);
+          Object.values(row).forEach((value) => {
+            $("<td>").text(value).appendTo(rowElement);
+          });
+        });
+
+        tableContainer.empty().append(table);
+      }
+
+      createTable(transactionArray);
+    });
+
+    $(document).ready(function () {
+      const RequestArray = {
+        columns: [
+          {
+            payer: "Payer",
+            amount: "Amount",
+            currency: "Currency",
+            req: "Requested On",
+            due: "Due On",
+            status: "Status",
+          },
+        ],
+        rows: [
+          {
+            payer: "John",
+            amount: 23432,
+            currency: "USD ( $ )",
+            req: "20 Jun ‘23",
+            due: "29 Jun ‘23",
+            status: "Expired",
+          },
+          {
+            payer: "Alice",
+            amount: 6344,
+            currency: "EGP ( £ )",
+            req: "25 Jun ‘23",
+            due: "22 Jun ‘23",
+            status: "Cancelled",
+          },
+          {
+            payer: "Maryse",
+            amount: 43343,
+            currency: "INR ( ₹ )",
+            req: "01 Jun ‘23",
+            due: "15 Jun ‘23",
+            status: "Cancelled",
+          },
+          {
+            payer: "Zoey",
+            amount: 67421,
+            currency: "INR ( ₹ )",
+            req: "10 Jun ‘23",
+            due: "08 Jun ‘23",
+            status: "Paid",
+          },
+          {
+            payer: "Skylar",
+            amount: 478035,
+            currency: "EGP ( £ )",
+            req: "08 Jun ‘23",
+            due: "25 Jun ‘23",
+            status: "Paid",
+          },
+        ],
+      };
+
+      function createTable(data) {
+        const tableContainer = $("#table-container2");
+        const table = $("<table>").addClass("transaction-table");
+
+        const thead = $("<thead>").appendTo(table);
+
+        data.columns.forEach((row) => {
+          const headerElement = $("<tr>").appendTo(thead);
+          Object.values(row).forEach((value) => {
+            $("<td>").text(value).appendTo(headerElement);
+          });
+        });
+
+        const tbody = $("<tbody>").appendTo(table);
+        data.rows.forEach((row) => {
+          const rowElement = $("<tr>").appendTo(tbody);
+          Object.values(row).forEach((value) => {
+            $("<td>").text(value).appendTo(rowElement);
+          });
+        });
+
+        tableContainer.empty().append(table);
+      }
+
+      createTable(RequestArray);
+    });
+
+    $(document).ready(function () {
+      $("#table-container1").show();
+      $("#transactionButton").css("color", "#e06a43");
+      $("#transactionButton").css("border", "1px solid #e06a43");
+
+      $("#transactionButton").click(function () {
+        $("#table-container1").show();
+        $("#table-container2").hide();
+        $(this).css("color", "#e06a43");
+        $(this).css("border", "1px solid #e06a43");
+        $("#requestButton").css("color", "black");
+        $("#requestButton").css("border", "none");
+      });
+
+      $("#requestButton").click(function () {
+        $("#table-container1").hide();
+        $("#table-container2").show();
+        $(this).css("color", "#e06a43");
+        $(this).css("border", "1px solid #e06a43");
+        $("#transactionButton").css("color", "black");
+        $("#transactionButton").css("border", "none");
+      });
+    });
+
+    // '<th class="amount2"><div class="th-text"><span class="primary-text">' +
+    //       theadData.columns[0].due +
+    //       '</span><div><ion-icon name="chevron-expand"></ion-icon><ion-icon name="funnel"></ion-icon></div></div></th>';
+  </script>
+</html>

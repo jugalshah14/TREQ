@@ -1,0 +1,320 @@
+.body-container {
+  padding: 0 36px;
+
+  .header {
+    padding: 20px 0;
+    display: flex;
+    border-bottom: 1px solid #efefef;
+    justify-content: space-between;
+
+    .icon-text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      ion-icon {
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+      }
+
+      h6 {
+        font-size: 20px;
+        font-family: General Sans-m;
+        margin: 0;
+      }
+    }
+        .progress-bar {
+          position: relative;
+          height: 10px;
+          width: 150px;
+          background: #eaeaea;
+          border-radius: 25px;
+          margin-top: 30px;
+        }
+    
+        .progress-fill {
+          position: absolute;
+          height: 10px;
+          width: 0%;
+          background: #e06a43;
+          border-radius: 15px;
+        }
+  }
+  .col-md-9 {
+    margin-top: 10px;
+  }
+  .accordion-item{
+    border: none;
+  }
+  .accordion-header{
+    border-bottom: 1px solid #efefef;
+    font-size: 16px;
+    font-family: General Sans-semibold;
+  }
+  .accordion-button:not(.collapsed){
+    background-color: white;
+  }
+  .accordion-button:focus{
+    border-color: white;
+    box-shadow: none;
+  }
+  .accordion-body{
+    display: flex;
+    gap: 100px;
+
+    .input-text{
+      display: flex;
+      gap: 10px;
+    }
+
+    .row{
+      width: 100%;
+    }
+    .side-column{
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .label-input{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        span{
+          font-size: 12px;
+          display: flex;
+          align-items: start;
+          gap: 5px;
+
+          img{
+            height: 16px;
+            width: 16px;
+            margin-top: 2px;
+          }
+        }
+      }
+      .label-input2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      input{
+        width: 100%;
+      }
+    }
+    .card{
+      height: 175px;
+      width: 275px;
+      border: 1px dashed #000;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+
+      .card-body{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .file-input-label{
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.bottom{
+  display: flex;
+  position: fixed !important;
+  bottom: 0;
+  border-top: 2px solid #efefef;
+  width: 95%;
+  height: 100px;
+  align-items: center;
+
+  .buttons{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    padding: 0 36px;
+    height: auto;
+    align-items: center;
+    justify-content: end;
+
+    p{
+      cursor: pointer;
+      color: #000;
+      font-size: 14px;
+    }
+  }
+}
+
+.col-md-3{
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+  .card{
+    background-color: #f9f8fe;
+    border: none;
+    width: 260px;
+    height: max-content;
+    .card-body{
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      ion-icon{
+        color: #9075e1;
+        height: 35px;
+        width: 50px;
+      }
+            .main-text {
+              font-size: 14px;
+              font-family: Satoshi;
+              line-height: 1.25rem;
+              }
+    }
+  }
+}
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 500px;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+}
+
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal.right .modal-body {
+  padding: 15px 15px 80px;
+}
+
+.modal.right.fade .modal-dialog {
+  right: 0px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+  transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+  right: 0;
+}
+
+.modal {
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-title {
+    font-family: General Sans-bold !important;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column !important;
+
+    .accordion-body{
+      display: block;
+
+      padding: 0;
+        margin: 20px 0;
+      
+        .radio-buttons {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: row;
+          color: white;
+          gap: 10px;
+        }
+      
+        .radio-button {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+      
+        .radio-button input[type="radio"] {
+          display: none;
+        }
+      
+        .radio-circle {
+          width: 20px;
+          height: 20px;
+          border-radius: 8px;
+          border: 1px solid #aaa;
+          position: relative;
+          margin-right: 10px;
+        }
+      
+        .radio-circle::before {
+          content: "";
+          display: block;
+          width: 20px;
+          height: 20px;
+          border-radius: 8px;
+          background-color: #ddd;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          transition: all 0.2s ease-in-out;
+        }
+      
+        .radio-button input[type="radio"]:checked+.radio-circle::before {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      
+        .radio-button:nth-of-type(1) input[type="radio"]:checked+.radio-circle::before {
+          background-color: #e06a43;
+        }
+      
+        .radio-button:nth-of-type(2) input[type="radio"]:checked+.radio-circle::before {
+          background-color: #e06a43;
+        }
+      
+        .radio-label {
+          font-size: 14px;
+          font-family: Satoshi-medium;
+        }
+      
+        form {
+          margin-top: 40px;
+          gap: 30px;
+          display: flex;
+          flex-direction: column;
+        }
+
+    }
+
+    .modal-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      width: 95%;
+
+      h6 {
+        font-size: 14px;
+        font-family: Satoshi-medium;
+        margin: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.accordion-button:not(.collapsed){
+  color: #000;
+}

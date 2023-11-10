@@ -1,0 +1,84 @@
+.main-content {
+  margin-left: 0;
+  padding-left: 100px;
+  padding-right: 0; }
+
+.top-contant {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  padding-top: 24px;
+  padding-left: 36px;
+  padding-right: 36px;
+  align-items: center;
+  justify-content: space-between; }
+  .top-contant h1 {
+    margin-bottom: 0; }
+  .top-contant .main-text {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: bold; }
+
+.main-body {
+  width: 100%; }
+  .main-body .padding {
+    padding: 0 36px; }
+    .main-body .padding table {
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      width: 100%;
+      margin-top: 20px; }
+      .main-body .padding table thead tr {
+        padding: 0 40px; }
+      .main-body .padding table thead td {
+        font-size: 12px;
+        padding: 30px 20px;
+        border-top: none;
+        color: #7f8899;
+        font-family: Satoshi-medium; }
+      .main-body .padding table tbody tr:hover {
+        background-color: #fdf8f6;
+        cursor: pointer; }
+      .main-body .padding table tbody tr td {
+        padding: 30px 20px;
+        border-top: none;
+        font-size: 14px;
+        color: #1f2c35;
+        font-family: Satoshi-medium; }
+      .main-body .padding table tr {
+        width: 100%;
+        border-bottom: 1px solid #efefef; }
+  .main-body .account {
+    background-color: #fdf8f6;
+    border-bottom: 2px solid #efefef; }
+    .main-body .account .main-text {
+      font-family: General Sans-semibold;
+      font-size: 18px;
+      padding: 20px 36px; }
+  .main-body .top-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; }
+    .main-body .top-header .form-group {
+      margin: 0; }
+    .main-body .top-header .has-search {
+      width: 200px;
+      display: flex;
+      align-items: center; }
+      .main-body .top-header .has-search .form-control {
+        padding-left: 2.375rem;
+        border-radius: 10px;
+        height: 35px; }
+      .main-body .top-header .has-search .form-control-feedback {
+        padding-left: 10px;
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 20px;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #000; }
+    .main-body .top-header .date-button {
+      display: flex;
+      gap: 10px; }

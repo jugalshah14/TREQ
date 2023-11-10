@@ -1,0 +1,238 @@
+.body-container {
+  padding: 0 36px; }
+  .body-container .header {
+    padding: 20px 0;
+    display: flex;
+    border-bottom: 1px solid #efefef;
+    justify-content: space-between; }
+    .body-container .header .icon-text {
+      display: flex;
+      align-items: center;
+      gap: 10px; }
+      .body-container .header .icon-text ion-icon {
+        cursor: pointer;
+        height: 20px;
+        width: 20px; }
+      .body-container .header .icon-text h6 {
+        font-size: 20px;
+        font-family: General Sans-m;
+        margin: 0; }
+    .body-container .header .progress-bar {
+      position: relative;
+      height: 10px;
+      width: 150px;
+      background: #eaeaea;
+      border-radius: 25px;
+      margin-top: 30px; }
+    .body-container .header .progress-fill {
+      position: absolute;
+      height: 10px;
+      width: 0%;
+      background: #e06a43;
+      border-radius: 15px; }
+  .body-container .col-md-9 {
+    margin-top: 10px; }
+  .body-container .accordion-item {
+    border: none; }
+  .body-container .accordion-header {
+    border-bottom: 1px solid #efefef;
+    font-size: 16px;
+    font-family: General Sans-semibold; }
+  .body-container .accordion-button:not(.collapsed) {
+    background-color: white; }
+  .body-container .accordion-button:focus {
+    border-color: white;
+    box-shadow: none; }
+  .body-container .accordion-body {
+    display: flex;
+    gap: 100px; }
+    .body-container .accordion-body .input-text {
+      display: flex;
+      gap: 10px; }
+    .body-container .accordion-body .row {
+      width: 100%; }
+    .body-container .accordion-body .side-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px; }
+      .body-container .accordion-body .side-column .label-input {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; }
+        .body-container .accordion-body .side-column .label-input span {
+          font-size: 12px;
+          display: flex;
+          align-items: start;
+          gap: 5px; }
+          .body-container .accordion-body .side-column .label-input span img {
+            height: 16px;
+            width: 16px;
+            margin-top: 2px; }
+      .body-container .accordion-body .side-column .label-input2 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; }
+      .body-container .accordion-body .side-column input {
+        width: 100%; }
+    .body-container .accordion-body .card {
+      height: 175px;
+      width: 275px;
+      border: 1px dashed #000;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer; }
+      .body-container .accordion-body .card .card-body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column; }
+        .body-container .accordion-body .card .card-body .file-input-label {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 10px;
+          cursor: pointer; }
+
+.bottom {
+  display: flex;
+  position: fixed !important;
+  bottom: 0;
+  border-top: 2px solid #efefef;
+  width: 95%;
+  height: 100px;
+  align-items: center; }
+  .bottom .buttons {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    padding: 0 36px;
+    height: auto;
+    align-items: center;
+    justify-content: end; }
+    .bottom .buttons p {
+      cursor: pointer;
+      color: #000;
+      font-size: 14px; }
+
+.col-md-3 {
+  margin-top: 30px;
+  display: flex;
+  justify-content: end; }
+  .col-md-3 .card {
+    background-color: #f9f8fe;
+    border: none;
+    width: 260px;
+    height: max-content; }
+    .col-md-3 .card .card-body {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px; }
+      .col-md-3 .card .card-body ion-icon {
+        color: #9075e1;
+        height: 35px;
+        width: 50px; }
+      .col-md-3 .card .card-body .main-text {
+        font-size: 14px;
+        font-family: Satoshi;
+        line-height: 1.25rem; }
+
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 500px;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0); }
+
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto; }
+
+.modal.right .modal-body {
+  padding: 15px 15px 80px; }
+
+.modal.right.fade .modal-dialog {
+  right: 0px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+  transition: opacity 0.3s linear, right 0.3s ease-out; }
+
+.modal.right.fade.in .modal-dialog {
+  right: 0; }
+
+.modal .modal-content {
+  padding: 20px; }
+
+.modal .modal-title {
+  font-family: General Sans-bold !important; }
+
+.modal .modal-body {
+  display: flex;
+  flex-direction: column !important; }
+  .modal .modal-body .accordion-body {
+    display: block;
+    padding: 0;
+    margin: 20px 0; }
+    .modal .modal-body .accordion-body .radio-buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      color: white;
+      gap: 10px; }
+    .modal .modal-body .accordion-body .radio-button {
+      display: flex;
+      align-items: center;
+      cursor: pointer; }
+    .modal .modal-body .accordion-body .radio-button input[type="radio"] {
+      display: none; }
+    .modal .modal-body .accordion-body .radio-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      position: relative;
+      margin-right: 10px; }
+    .modal .modal-body .accordion-body .radio-circle::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 8px;
+      background-color: #ddd;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: all 0.2s ease-in-out; }
+    .modal .modal-body .accordion-body .radio-button input[type="radio"]:checked + .radio-circle::before {
+      transform: translate(-50%, -50%) scale(1); }
+    .modal .modal-body .accordion-body .radio-button:nth-of-type(1) input[type="radio"]:checked + .radio-circle::before {
+      background-color: #e06a43; }
+    .modal .modal-body .accordion-body .radio-button:nth-of-type(2) input[type="radio"]:checked + .radio-circle::before {
+      background-color: #e06a43; }
+    .modal .modal-body .accordion-body .radio-label {
+      font-size: 14px;
+      font-family: Satoshi-medium; }
+    .modal .modal-body .accordion-body form {
+      margin-top: 40px;
+      gap: 30px;
+      display: flex;
+      flex-direction: column; }
+  .modal .modal-body .modal-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 95%; }
+    .modal .modal-body .modal-bottom h6 {
+      font-size: 14px;
+      font-family: Satoshi-medium;
+      margin: 0;
+      cursor: pointer; }
+
+.accordion-button:not(.collapsed) {
+  color: #000; }

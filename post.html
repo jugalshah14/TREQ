@@ -1,0 +1,221 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/post.css" />
+    <title>Payments</title>
+  </head>
+
+  <body>
+    <div class="full-body">
+      <div class="side-nav">
+        <div>
+          <div class="logo">
+            <img src="./photos/Group 100000353.svg" alt="" />
+          </div>
+          <div class="icon">
+            <img src="./photos/Compiling1.svg" alt="" />
+          </div>
+        </div>
+        <div class="exit-icon">
+          <img src="./photos/arr011.svg" alt="" />
+        </div>
+      </div>
+      <div class="main-content body-contant">
+        <div class="top-contant">
+          <h1 class="main-text">Cross Border Remittance</h1>
+        </div>
+        <div class="navigation">
+          <a href="DashRemittance.html">Dashboard</a>
+          <a href="account.html" >Accounts</a>
+          <a href="payment.html">Payments</a>
+          <a active>Post-Export Documents</a>
+        </div>
+        <div class="main-body">
+          <div class="account">
+            <p class="main-text">FIRC/e-BRC</p>
+          </div>
+          <div class="padding">
+            <div class="top-header">
+              <div class="form-group has-search">
+                <ion-icon
+                  name="search-outline"
+                  class="form-control-feedback"
+                ></ion-icon>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Table"
+                />
+              </div>
+              <div class="date-button">
+                <div class="input-container">
+                  <input
+                    placeholder="Due Date"
+                    type="text"
+                    name="checkIn"
+                    value=""
+                    class="dob datepicker"
+                  />
+                  <ion-icon
+                    name="calendar-outline"
+                    class="calendar-icon"
+                  ></ion-icon>
+                </div>
+                <button>Download</button>
+              </div>
+            </div>
+            <div class="table-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="comman.js"></script>
+    
+
+  <script>
+    const firstArray = {
+      columns: [
+        {
+          payer: "Payer Name",
+          company: "Company Name",
+          transaction: "Transaction Id",
+          date: "Date",
+          amount: "Amount",
+          action: "Action",
+        },
+      ],
+      rows: [
+        {
+          payer: "Doyle and Sons",
+          company: " ",
+          transaction: "TID452618",
+          date: " ",
+          amount: "₹ NaN",
+          action: " ",
+        },
+        {
+              payer: "Tillman, Schmitt and Wolf",
+              company: " ",
+              transaction: "TID854914",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+          {
+              payer: "Osinski - Kassulke",
+              company: " ",
+              transaction: "TID434248",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+          {
+              payer: "Keebler, Emmerich and Hoppe",
+              company: " ",
+              transaction: "TID639300",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+          {
+              payer: "Kunde - Keebler",
+              company: " ",
+              transaction: "TID392300",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+          {
+              payer: "Doyle and Sons",
+              company: " ",
+              transaction: "TID452618",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+          {
+              payer: "Tillman, Schmitt and Wolf",
+              company: " ",
+              transaction: "TID854914",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+          {
+              payer: "Osinski - Kassulke",
+              company: " ",
+              transaction: "TID434248",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+          {
+              payer: "Keebler, Emmerich and Hoppe",
+              company: " ",
+              transaction: "TID639300",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+          {
+              payer: "Kunde - Keebler",
+              company: " ",
+              transaction: "TID392300",
+              date: " ",
+              amount: "₹ NaN",
+              action: " ",
+          },
+      ],
+    };
+    function createAndPopulateTable() {
+            const tableContainer = $('.table-container');
+            const table = $('<table>');
+
+            const tableHeader = $('<thead>');
+                firstArray.columns.forEach(row => {
+            const headerRow = $('<tr>');
+            for (const key in row) {
+                headerRow.append(`<td>${row[key]}</td>`);
+            }
+            tableHeader.append(headerRow);
+        });
+            
+
+            const tableBody = $('<tbody>');
+            firstArray.rows.forEach(row => {
+                const rowElement = $('<tr>');
+                for (const key in row) {
+                    rowElement.append(`<td>${row[key]}</td>`);
+                }
+                tableBody.append(rowElement);
+            });
+
+            table.append(tableHeader);
+            table.append(tableBody);
+
+            tableContainer.append(table);
+        }
+
+        createAndPopulateTable();
+  </script>
+</html>

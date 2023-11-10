@@ -83,11 +83,27 @@ input {
     border-color: #e06a43; }
   input:invalid {
     border-color: #e06a43; }
+  input::placeholder {
+    color: #c0c0c0;
+    font-size: 14px;
+    font-family: Satoshi; }
 
-input::placeholder {
-  color: #c0c0c0;
-  font-size: 14px;
-  font-family: Satoshi; }
+textarea {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(127, 136, 153, 0.2);
+  outline: none; }
+  textarea:focus {
+    border-color: #e06a43; }
+  textarea:active {
+    border-color: #e06a43; }
+  textarea:invalid {
+    border-color: #e06a43; }
+  textarea::placeholder {
+    color: #c0c0c0;
+    font-size: 14px;
+    font-family: Satoshi; }
 
 .input-container {
   position: relative; }
@@ -185,7 +201,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in;
   z-index: 999; }
   .side-nav .menu-names {
     display: none;
@@ -219,19 +235,21 @@ button {
       display: block;
       opacity: 1;
       transform: translateX(0);
-      transition-delay: 0.4s;
-      transition: opacity 0.3s ease, transform 0.3s ease; }
+      transition-delay: 0.2s; }
       .side-nav:hover .menu-names p {
-        color: #e06a43; }
+        font-family: Satoshi-medium;
+        color: #e06a43;
+        font-size: 14px; }
     .side-nav:hover .menu-names2 {
       display: block;
       opacity: 1;
       transform: translateX(0);
-      transition-delay: 0.6s;
-      padding-left: 65px;
-      transition: opacity 0.3s ease, transform 0.3s ease; }
+      transition-delay: 0.4s;
+      padding-left: 65px; }
       .side-nav:hover .menu-names2 p {
-        color: white;
+        font-family: Satoshi-medium;
+        font-size: 14px;
+        color: #EFEFEF;
         margin-top: 20px;
         cursor: pointer; }
   @media only screen and (max-width: 768px) {
@@ -265,7 +283,7 @@ button {
 
 .main-content {
   padding: 0 20px;
-  margin-left: 100px;
+  padding-left: 100px;
   width: 100%; }
   @media only screen and (max-width: 768px) {
     .main-content {
@@ -412,3 +430,22 @@ button {
 .ui-datepicker-unselectable .ui-state-default {
   color: #eee;
   border: 2px solid transparent; }
+
+.navigation {
+  width: 100%;
+  height: 30px;
+  border-bottom: 2px solid #efefef;
+  display: flex;
+  flex-direction: row;
+  padding: 0 36px;
+  margin-top: 1.25rem;
+  gap: 50px; }
+  .navigation a {
+    color: #9d9fac;
+    text-decoration: none;
+    font-size: 14px; }
+    .navigation a:hover {
+      color: #000; }
+    .navigation a:active {
+      color: #000;
+      border-bottom: 2px solid #e06a43; }

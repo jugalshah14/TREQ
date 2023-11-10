@@ -1,0 +1,563 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/request.css" />
+    <title>Request</title>
+  </head>
+  <body>
+    <div class="full-body">
+      <div class="side-nav">
+        <div>
+          <div class="logo">
+            <img src="./photos/Group 100000353.svg" alt="" />
+          </div>
+          <div class="icon">
+            <img src="./photos/Compiling1.svg" alt="" />
+          </div>
+        </div>
+        <div class="exit-icon">
+          <img src="./photos/arr011.svg" alt="" />
+        </div>
+      </div>
+      <div class="main-content body-contant">
+        <div class="body-container">
+          <div class="header">
+            <div class="icon-text">
+              <ion-icon
+                onclick="window.location.href='payment.html';"
+                name="chevron-back-outline"
+              ></ion-icon>
+              <h6>New Payment</h6>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-9">
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseOne"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseOne"
+                    >
+                      Select Payer
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne"
+                  >
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <span>Receive amount from the payer *</span>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-text">
+                            <select id="addnew" style="width: 70%">
+                              <option value="name1">Solon Golden</option>
+                              <option value="name2">ardff ekei</option>
+                              <option value="name3">ejrf jir</option>
+                              <option value="name4">fnds greS</option>
+                            </select>
+                            <button
+                              class="my-button"
+                              data-toggle="modal"
+                              data-target=".checkModal"
+                            >
+                              + Add a New Payer
+                            </button>
+                            <div
+                              class="modal right fade checkModal"
+                              tabindex="-1"
+                              role="dialog"
+                              aria-labelledby="myModalLabel2"
+                            >
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Add a New Payer</h5>
+                                    <button
+                                      type="button"
+                                      class="close"
+                                      data-dismiss="modal"
+                                      aria-label="Close"
+                                    >
+                                      <span aria-hidden="true">
+                                        <ion-icon
+                                          data-bs-dismiss="modal"
+                                          name="close"
+                                        ></ion-icon>
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div
+                                      class="accordion"
+                                      id="accordionExample"
+                                    >
+                                      <div class="accordion-item">
+                                        <h2
+                                          class="accordion-header"
+                                          id="headingOne"
+                                        >
+                                          <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne"
+                                            aria-expanded="false"
+                                            aria-controls="collapseOne"
+                                          >
+                                            Payer Type
+                                          </button>
+                                        </h2>
+                                        <div
+                                          id="collapseOne"
+                                          class="accordion-collapse collapse show"
+                                          aria-labelledby="headingOne"
+                                          data-bs-parent="#accordionExample"
+                                        >
+                                          <div class="accordion-body">
+                                            <span
+                                              >Select the type of payer to
+                                              classify and find them
+                                              easily</span
+                                            >
+                                            <div class="radio-buttons">
+                                              <label class="radio-button">
+                                                <input
+                                                  type="radio"
+                                                  name="option"
+                                                  value="option1"
+                                                  checked="checked"
+                                                />
+                                                <div class="radio-circle"></div>
+                                                <span class="radio-label"
+                                                  >Company</span
+                                                >
+                                              </label>
+                                              <label class="radio-button">
+                                                <input
+                                                  type="radio"
+                                                  name="option"
+                                                  value="option2"
+                                                />
+                                                <div class="radio-circle"></div>
+                                                <span class="radio-label"
+                                                  >Individual</span
+                                                >
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="accordion-item">
+                                        <h2
+                                          class="accordion-header"
+                                          id="headingTwo"
+                                        >
+                                          <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTwo"
+                                            aria-expanded="false"
+                                            aria-controls="collapseTwo"
+                                          >
+                                            Payer Details
+                                          </button>
+                                        </h2>
+                                        <div
+                                          id="collapseTwo"
+                                          class="accordion-collapse collapse"
+                                          aria-labelledby="headingTwo"
+                                          data-bs-parent="#accordionExample"
+                                        >
+                                          <div class="accordion-body">
+                                            <span
+                                              >Fill in your payer's details
+                                              required to send and receive
+                                              funds</span
+                                            >
+                                            <form>
+                                              <div>
+                                                <label>First Name*</label>
+                                                <input
+                                                  type="text"
+                                                  placeholder="Enter First Name"
+                                                  value="Ashlee"
+                                                />
+                                              </div>
+                                              <div>
+                                                <label>Last Name*</label>
+                                                <input
+                                                  type="text"
+                                                  placeholder="Enter Last Name"
+                                                  value="Kebbler"
+                                                />
+                                              </div>
+                                              <div>
+                                                <label>Email</label>
+                                                <input
+                                                  type="text"
+                                                  placeholder="Enter Email"
+                                                  value="Ashtyn.Corkery@hotmail.com"
+                                                />
+                                              </div>
+                                              <div>
+                                                <label>Contact Number*</label>
+                                                <input
+                                                  type="number"
+                                                  placeholder="Enter Payer's Contact Number"
+                                                />
+                                              </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="modal-bottom">
+                                      <h6 data-bs-dismiss="modal">Back</h6>
+                                      <button>Add Payer</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            id="errorMessage1"
+                            style="color: #e06a43"
+                          ></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="panelsStayOpen-collapseTwo"
+                    >
+                      Payment Details
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTwo"
+                  >
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <span
+                            >Fill up the details like amount and currency</span
+                          >
+                        </div>
+                        <div class="col-md-4 side-column">
+                          <div class="label-input">
+                            <label for="currency">Currency*</label>
+                            <input
+                              type="text"
+                              id="currency"
+                              placeholder="Select Currency"
+                            />
+                            <span
+                              id="errorMessage2"
+                              style="color: #e06a43"
+                            ></span>
+                          </div>
+                          <div class="label-input">
+                            <label for="accountNo">Account Number*</label>
+                            <input
+                              type="text"
+                              id="ANumber"
+                              placeholder="Account Number"
+                              disabled="disabled"
+                            />
+                            <span
+                              id="errorMessage3"
+                              style="color: #e06a43"
+                            ></span>
+                          </div>
+                          <div class="label-input">
+                            <label for="amount">Amount*</label>
+                            <input
+                              type="text"
+                              id="amount"
+                              placeholder="Enter Amount"
+                            />
+                            <span
+                              id="errorMessage4"
+                              style="color: #e06a43"
+                            ></span>
+                            <span
+                              ><img
+                                src="https://treq-five.vercel.app/_next/static/media/info.ef275608.svg"
+                                alt=""
+                              />This dollar amount will be applied to the
+                              specific timeframe of your transactions.</span
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-4 side-column">
+                          <div class="label-input2">
+                            <label for="Transaction">Transaction Type *</label>
+                            <select
+                              id="Transaction"
+                              style="width: 100%"
+                            ></select>
+                            <span
+                              id="errorMessage5"
+                              style="color: #e06a43"
+                            ></span>
+                          </div>
+                          <div class="label-input">
+                            <label for="Date">Due Date *</label>
+                            <div class="input-container">
+                              <input
+                                placeholder="Due Date"
+                                type="text"
+                                name="checkIn"
+                                value=""
+                                class="dob datepicker"
+                              />
+                              <ion-icon
+                                name="calendar-outline"
+                                class="calendar-icon"
+                              ></ion-icon>
+                              <span
+                                id="errorMessage6"
+                                style="color: #e06a43"
+                              ></span>
+                            </div>
+                          </div>
+                          <div class="label-input">
+                            <label for="Description">Description</label>
+                            <textarea
+                              id="Description"
+                              placeholder="Enter Description"
+                              rows="3"
+                            ></textarea>
+                            <span
+                              id="errorMessage7"
+                              style="color: #e06a43"
+                            ></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="panelsStayOpen-collapseThree"
+                    >
+                      Attachments
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree"
+                  >
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-md-3">
+                          <span>Attach invoice/documents here *</span>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="card">
+                            <div class="card-body">
+                              <label for="fileInput" class="file-input-label">
+                                <img src="photos/Frame3.svg" alt="" />
+                                <p class="main-text file">
+                                  Drag files to upload
+                                </p>
+                              </label>
+                              <input
+                                type="file"
+                                id="fileInput"
+                                style="display: none"
+                                accept="image/*, .pdf, .doc, .docx"
+                              />
+                            </div>
+                          </div>
+                          <span
+                            id="errorMessage8"
+                            style="color: #e06a43"
+                          ></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <ion-icon name="bulb"></ion-icon>
+                  <p class="main-text">
+                    Make sure payment details filled in match with the invoice
+                    uploaded.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="buttons">
+            <p class="main-text" onclick="window.location.href='payment.html';">
+              Back
+            </p>
+            <button id="requestPayment">Request Payment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="comman.js"></script>
+  <script>
+    $(".my-button").click(function () {
+      $(".checkModal").modal("show");
+    });
+    $(document).ready(function () {
+      $(".card-body").on("click", function () {
+        $("#fileInput").click();
+      });
+
+      $("#fileInput").on("change", function () {
+        const files = this.files;
+        if (files.length > 0) {
+          const fileName = files[0].name;
+          $(".file").text(fileName);
+        }
+      });
+    });
+  $(document).ready(function () {
+    const fields = $("input[type='text'], select, textarea, input[type='file']");
+    const progressFill = $("#progressFill");
+    let currentFieldIndex = 0;
+
+    // Function to update the progress bar
+    function updateProgress() {
+      const progressPercentage = (currentFieldIndex / fields.length) * 100;
+      progressFill.css("width", progressPercentage + "%");
+    }
+
+    // Bind change and input events to the fields
+    fields.on("change input", function () {
+      if (currentFieldIndex < fields.length) {
+        currentFieldIndex++;
+        updateProgress();
+      }
+    });
+
+    // Initialize progress bar to 0%
+    updateProgress();
+  });
+
+    $(document).ready(function () {
+      $("#requestPayment").click(function () {
+        $(".error-message").text("");
+
+        var isValid = true;
+
+        var selectedPayer = $("#addnew").val();
+        if (!selectedPayer) {
+          $("#errorMessage1").text("Please select a payer");
+          isValid = false;
+        }
+
+        var currency = $("#currency").val();
+        if (!currency) {
+          $("#errorMessage2").text("Currency is required");
+          isValid = false;
+        }
+        var number = $("#ANumber").val();
+        if (!number) {
+          $("#errorMessage3").text("Account Number is required");
+          isValid = false;
+        }
+        var amount = $("#amount").val();
+        if (!amount) {
+          $("#errorMessage4").text("amount is required");
+          isValid = false;
+        }
+        var amount = $("#Transaction").val();
+        if (!amount) {
+          $("#errorMessage5").text("Transaction Type is required");
+          isValid = false;
+        }
+        var dob = $(".dob").val();
+        if (!dob) {
+          $("#errorMessage6").text("Due Date is required");
+          isValid = false;
+        }
+        var Description = $("#Description").val();
+        if (!Description) {
+          $("#errorMessage7").text("Description is required");
+          isValid = false;
+        }
+
+        if (isValid) {
+        }
+      });
+    });
+  </script>
+</html>
